@@ -1,20 +1,21 @@
 import { createPinia } from "pinia";
-// import { createPersistedState } from "pinia-plugin-persistedstate";
+import { createPersistedState } from "pinia-plugin-persistedstate";
 
 export const pinia = createPinia();
 
-// pinia.use(
-// 	createPersistedState({
-// 		storage: {
-// 			getItem(key) {
-// 				key = "pinia_store_" + key;
-// 				return uni.getStorageSync(key);
-// 			},
-// 			setItem(key, value) {
-// 				key = "pinia_store_" + key;
-// 				uni.setStorageSync(key, value);
-// 			},
-// 		},
-// 	}),
-// );
-// ;(window as any).pinia = pinia
+pinia.use(
+	createPersistedState({
+		storage: {
+			getItem(key) {
+				key = "pinia_store_" + key;
+				return uni.getStorageSync(key);
+			},
+			setItem(key, value) {
+				key = "pinia_store_" + key;
+				uni.setStorageSync(key, value);
+			},
+		},
+	}),
+);
+// @ts-ignore
+window.pinia = pinia;

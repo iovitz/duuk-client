@@ -15,9 +15,13 @@ module.exports = {
 	ignorePatterns: [".eslintrc.js", "index.html"],
 	overrides: [],
 	parserOptions: {
-		ecmaVersion: "latest",
+		//把 latest 这里修改一下就好了
+		ecmaVersion: 12,
 		sourceType: "module",
 		extraFileExtensions: [".vue"],
+		ecmaFeatures: {
+			modules: true,
+		},
 	},
 	plugins: ["vue"],
 	rules: {
