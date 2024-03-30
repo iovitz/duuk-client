@@ -1,6 +1,6 @@
 <template>
   <h1>Message</h1>
-  <TabBar />
+  <TabBar path="/pages/message/message" />
 </template>
 
 <script setup>
@@ -11,4 +11,3 @@ useHideTabBar();
 </script>
 
 <style lang="scss" scoped></style>
-@/hooks/hide-tabbar

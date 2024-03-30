@@ -1,6 +1,6 @@
 <template>
   <h1>Events</h1>
-  <TabBar />
+  <TabBar path="/pages/events/events" />
 </template>
 
 <script setup>
@@ -12,4 +12,3 @@ console.log("###");
 </script>
 
 <style lang="scss" scoped></style>
-@/hooks/hide-tabbar

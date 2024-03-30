@@ -24,7 +24,7 @@
       <h1>Home</h1>
     </scroll-view>
   </view>
-  <TabBar />
+  <TabBar path="/pages/home/home" />
 </template>
 
 <script setup>

@@ -1,6 +1,6 @@
 <template>
   <h1>Calendar</h1>
-  <TabBar />
+  <TabBar path="/pages/calendar/calendar" />
 </template>
 
 <script setup>
