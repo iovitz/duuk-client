@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4487328 */
+  src:
+    url("iconfont.woff2?t=1711718354450") format("woff2"),
+    url("iconfont.woff?t=1711718354450") format("woff"),
+    url("iconfont.ttf?t=1711718354450") format("truetype");
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-HomeOutline:before {
+  content: "\e672";
+}
+
+.icon-AdvisoryOutline:before {
+  content: "\e668";
+}
+
+.icon-PlanetOutline:before {
+  content: "\e6ad";
+}
+
+.icon-CalendarOutline:before {
+  content: "\e66a";
+}

@@ -1,0 +1,37 @@
+{
+  "id": "4487328",
+  "name": "井水",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "13725283",
+      "name": "HomeOutline",
+      "font_class": "HomeOutline",
+      "unicode": "e672",
+      "unicode_decimal": 58994
+    },
+    {
+      "icon_id": "13725242",
+      "name": "AdvisoryOutline",
+      "font_class": "AdvisoryOutline",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "13738767",
+      "name": "PlanetOutline",
+      "font_class": "PlanetOutline",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "13725233",
+      "name": "CalendarOutline",
+      "font_class": "CalendarOutline",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    }
+  ]
+}

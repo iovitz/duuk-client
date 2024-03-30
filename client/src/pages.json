@@ -9,21 +9,63 @@
     {
       "path": "pages/home/home",
       "style": {
-        "navigationStyle": "custom"
+        "navigationBarTitleText": "首页"
       }
+    },
+    {
+      "path": "pages/calendar/calendar",
+      "style": {
+        "navigationBarTitleText": "日历"
+      }
+    },
+    {
+      "path": "pages/events/events",
+      "style": {
+        "navigationBarTitleText": "事件"
+      }
+    },
+    {
+      "path": "pages/message/message",
+      "style": {
+        "navigationBarTitleText": "信息"
+      },
+      "preload": true
     }
   ],
   "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#ec7436",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
-    "list": []
+    "color": "white",
+    "selectedColor": "#FFDA62",
+    "height": 0,
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "static/tabbar-icons/family.png",
+        "selectedIconPath": "static/tabbar-icons/family-active.png"
+      },
+      {
+        "pagePath": "pages/events/events",
+        "iconPath": "static/tabbar-icons/events.png",
+        "selectedIconPath": "static/tabbar-icons/events-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "static/tabbar-icons/message.png",
+        "selectedIconPath": "static/tabbar-icons/message-active.png"
+      },
+      {
+        "pagePath": "pages/calendar/calendar",
+        "iconPath": "static/tabbar-icons/calendar.png",
+        "selectedIconPath": "static/tabbar-icons/calendar-active.png"
+      }
+    ]
   },
   "globalStyle": {
-    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "Uniapp社区",
-    "navigationBarBackgroundColor": "#328CFF",
-    "backgroundColor": "#328CFF"
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff",
+    "navigationStyle": "custom",
+    "app-plus": {
+      "bounce": "none"
+    }
   }
 }

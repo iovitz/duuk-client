@@ -1,7 +1,40 @@
 <template>
-  <uv-button type="primary" text="确定"></uv-button>
+  <view class="tabbar-page-container">
+    <scroll-view :scroll-y="true" :style="`height: ${scrollViewHeight}px`">
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+      <h1>Home</h1>
+    </scroll-view>
+  </view>
+  <TabBar />
 </template>
 
-<script setup></script>
+<script setup>
+import TabBar from "@/components/tabbar/tabbar.vue";
+import { useScrollViewHeight } from "@/hooks/scroll-view-height";
+import { useHideTabBar } from "@/hooks/hide-tabbar";
+
+const scrollViewHeight = useScrollViewHeight(130);
+
+useHideTabBar();
+</script>
 
 <style lang="scss" scoped></style>

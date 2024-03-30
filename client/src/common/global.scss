@@ -1,0 +1,11 @@
+.page-container,
+.tabbar-page-container {
+  padding-top: var(--status-bar-height);
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+
+.tabbar-page-container {
+  padding-bottom: 130upx;
+}

@@ -17,5 +17,8 @@ pinia.use(
 		},
 	}),
 );
-// @ts-ignore
-window.pinia = pinia;
+
+if (typeof window !== "undefined") {
+	// @ts-ignore
+	window.pinia = pinia;
+}
