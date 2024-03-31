@@ -35,8 +35,8 @@ onReady(() => {});
 <!-- 这里的style不能设置scoped -->
 <style lang="scss">
 @import "@/uni_modules/uv-ui-tools/index.scss";
-@import "@/common/style-fix.scss";
 @import "@/common/theme.scss";
+@import "@/common/style-fix.scss";
 @import "@/common/global.scss";
 @import "@/common/iconfont/iconfont.css";
 

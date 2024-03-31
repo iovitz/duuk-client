@@ -15,19 +15,22 @@
     {
       "path": "pages/calendar/calendar",
       "style": {
-        "navigationBarTitleText": "日历"
+        "navigationBarTitleText": "日历",
+        "navigationStyle": "default"
       }
     },
     {
       "path": "pages/events/events",
       "style": {
-        "navigationBarTitleText": "事件"
+        "navigationBarTitleText": "事件",
+        "navigationStyle": "default"
       }
     },
     {
       "path": "pages/message/message",
       "style": {
-        "navigationBarTitleText": "信息"
+        "navigationBarTitleText": "信息",
+        "navigationStyle": "default"
       },
       "preload": true
     }

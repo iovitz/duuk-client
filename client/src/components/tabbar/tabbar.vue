@@ -55,23 +55,26 @@ const props = defineProps({
   left: 0;
   right: 0;
   bottom: 0;
-  height: 140upx;
-  border-top-left-radius: 30upx;
-  border-top-right-radius: 30upx;
+  height: 120upx;
+  border-top-left-radius: 20upx;
+  border-top-right-radius: 20upx;
   box-shadow: 0px -8px 15px -3px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   .tab-bar-item {
-    height: 100upx;
-    width: 100upx;
+    height: 80upx;
+    width: 80upx;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 40upx;
     color: #888;
     transition: all ease 300ms;
-    position: relative;
     border-radius: 20upx;
+    position: relative;
     top: 0;
+    .iconfont {
+      position: relative;
+    }
     &::after {
       display: block;
       content: "";
@@ -81,19 +84,20 @@ const props = defineProps({
       background-color: #5c3eea;
       left: 50%;
       margin-left: -3upx;
-      bottom: 10upx;
+      bottom: 20upx;
       position: absolute;
       opacity: 0;
       transition: all ease 300ms;
     }
     &.active {
-      background-color: #eee;
       color: #5c3eea;
       &::after {
         opacity: 1;
       }
-      top: -10upx;
       opacity: 1;
+      .iconfont {
+        top: -10upx;
+      }
     }
   }
 }
