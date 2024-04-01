@@ -4,7 +4,9 @@
       v-for="itm in tabbarItem"
       :key="itm.path"
       @click="() => switchTab(itm.path)"
-      :class="`tab-bar-item ${props.path === itm.path ? 'active' : ''}`"
+      :class="`tab-bar-item ${
+        props.path === itm.path && isShow ? 'active' : ''
+      }`"
     >
       <i :class="`iconfont icon-${itm.icon}`" />
     </view>
@@ -12,7 +14,11 @@
 </template>
 
 <script setup>
+import { onHide, onShow } from "@dcloudio/uni-app";
 import { ref } from "vue";
+
+const isShow = ref(false);
+
 const tabbarItem = ref([
   {
     path: "/pages/home/home",
@@ -32,6 +38,13 @@ const tabbarItem = ref([
   },
 ]);
 
+onHide(() => {
+  isShow.value = false;
+});
+onShow(() => {
+  isShow.value = true;
+});
+
 function switchTab(path) {
   uni.switchTab({
     url: path,
@@ -46,6 +59,16 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    color: #5c3eea;
+    transform: translateY(-10upx);
+  }
+}
+
 .page-tab-bar {
   display: flex;
   position: fixed;
@@ -67,13 +90,15 @@ const props = defineProps({
     align-items: center;
     justify-content: center;
     font-size: 40upx;
-    color: #888;
+    color: #999999;
     transition: all ease 300ms;
     border-radius: 20upx;
     position: relative;
     top: 0;
     .iconfont {
-      position: relative;
+      animation-duration: 3s;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
     }
     &::after {
       display: block;
@@ -84,7 +109,7 @@ const props = defineProps({
       background-color: #5c3eea;
       left: 50%;
       margin-left: -3upx;
-      bottom: 20upx;
+      bottom: 15upx;
       position: absolute;
       opacity: 0;
       transition: all ease 300ms;
@@ -96,7 +121,7 @@ const props = defineProps({
       }
       opacity: 1;
       .iconfont {
-        top: -10upx;
+        animation-name: slide-top;
       }
     }
   }
