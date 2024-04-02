@@ -1,5 +1,5 @@
 {
-  "name": "@memories/backend",
+  "name": "@fumashop/backend",
   "version": "1.0.0",
   "description": "Memories are powerful things.",
   "private": true,
@@ -8,14 +8,17 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "crypto-js": "^4.2.0",
     "egg": "^3",
     "egg-cors": "^3.0.0",
     "egg-router-plus": "^2.0.0",
     "egg-scripts": "^2",
+    "egg-sequelize": "^6.0.0",
     "egg-validate": "^2.0.2",
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",
+    "mysql2": "^3.9.3",
     "zlib": "^1.0.5"
   },
   "devDependencies": {

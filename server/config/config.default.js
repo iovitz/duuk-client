@@ -20,6 +20,11 @@ module.exports = () => {
     },
   };
 
+  config.logger = {
+    consoleLevel: "INFO",
+    allowDebugAtProd: true,
+  };
+
   exports.session = {
     key: "__server_session__",
     maxAge: 30 * 24 * 3600 * 1000, // 1 天
