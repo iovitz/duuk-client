@@ -4,7 +4,9 @@
       v-for="itm in tabbarItem"
       :key="itm.path"
       @click="() => switchTab(itm.path)"
-      :class="`tab-bar-item ${props.path === itm.path ? 'active' : ''}`"
+      :class="`tab-bar-item ${
+        props.path === itm.path && isShow ? 'active' : ''
+      }`"
     >
       <i :class="`iconfont icon-${itm.icon}`" />
     </view>
@@ -12,7 +14,11 @@
 </template>
 
 <script setup>
+import { onHide, onShow } from "@dcloudio/uni-app";
 import { ref } from "vue";
+
+const isShow = ref(false);
+
 const tabbarItem = ref([
   {
     path: "/pages/home/home",
@@ -31,6 +37,13 @@ const tabbarItem = ref([
     icon: "CalendarOutline",
   },
 ]);
+
+onHide(() => {
+  isShow.value = false;
+});
+onShow(() => {
+  isShow.value = true;
+});
 
 function switchTab(path) {
   uni.switchTab({
@@ -77,7 +90,7 @@ const props = defineProps({
     align-items: center;
     justify-content: center;
     font-size: 40upx;
-    color: #888;
+    color: #999999;
     transition: all ease 300ms;
     border-radius: 20upx;
     position: relative;
