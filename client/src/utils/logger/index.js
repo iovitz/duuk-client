@@ -31,6 +31,7 @@ class Logger {
 }
 
 const level =
+	// @ts-ignore
 	import.meta.env.VITE_LOG_LEVEL ?? uni.getStorageSync("app-enable-log");
 
 const logger = new Logger(level);
