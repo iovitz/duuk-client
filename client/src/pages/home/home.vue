@@ -13,6 +13,8 @@
     </uv-modal>
     <scroll-view :scroll-y="true" :style="`height: ${scrollViewHeight}px`">
       <home-swiper />
+      <HomeBookType />
+      <Heading title="热销书籍" moreText="查看更多" />
     </scroll-view>
   </view>
   <TabBar path="/pages/home/home" />
@@ -21,6 +23,8 @@
 <script setup>
 import TabBar from "@/components/tabbar/tabbar.vue";
 import HomeSwiper from "@/components/home-swiper/home-swiper";
+import Heading from "@/components/heading/heading";
+import HomeBookType from "@/components/home-book-type/home-book-type";
 import { useScrollViewHeight } from "@/hooks/scroll-view-height";
 
 const { scrollViewHeight, setOccupiedPx } = useScrollViewHeight();
