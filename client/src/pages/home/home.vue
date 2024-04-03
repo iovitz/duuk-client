@@ -8,17 +8,11 @@
       </view>
     </view>
 
+    <uv-modal ref="modal" title="标题">
+      <view class="slot-content"> h1h1 </view>
+    </uv-modal>
     <scroll-view :scroll-y="true" :style="`height: ${scrollViewHeight}px`">
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <view style="height: 100rpx; width: 100rpx"></view>
-      <h1>Home</h1>
-      <uv-button text="GO" type="primary"></uv-button>
+      <home-swiper />
     </scroll-view>
   </view>
   <TabBar path="/pages/home/home" />
@@ -26,10 +20,10 @@
 
 <script setup>
 import TabBar from "@/components/tabbar/tabbar.vue";
+import HomeSwiper from "@/components/home-swiper/home-swiper";
 import { useScrollViewHeight } from "@/hooks/scroll-view-height";
 
 const { scrollViewHeight, setOccupiedPx } = useScrollViewHeight();
-// const primaryColor = useThemeColors().primaryColor;
 setOccupiedPx(50 + 50);
 </script>
 
