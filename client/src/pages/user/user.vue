@@ -1,13 +1,10 @@
 <template>
-  <h1>Calendar</h1>
-  <TabBar path="/pages/message/message" />
+  <h1>User</h1>
+  <TabBar path="/pages/user/user" />
 </template>
 
 <script setup>
 import TabBar from "@/components/tabbar/tabbar.vue";
-import { useHideTabBar } from "@/hooks/hide-tabbar";
-
-useHideTabBar();
 </script>
 
 <style lang="scss" scoped></style>

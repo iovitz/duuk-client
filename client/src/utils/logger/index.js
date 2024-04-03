@@ -6,9 +6,7 @@ const LogLevel = {
 	error: 5,
 };
 
-class Logger {
-	level = uni.getStorageSync("logger-to-console") ?? import.meta.env.DEV;
-
+export class Logger {
 	constructor(level) {
 		this.level = Number(level ? level : LogLevel.verbose);
 	}
@@ -30,9 +28,4 @@ class Logger {
 	}
 }
 
-const level =
-	// @ts-ignore
-	import.meta.env.VITE_LOG_LEVEL ?? uni.getStorageSync("app-enable-log");
-
-const logger = new Logger(level);
-export default logger;
+export const logger = new Logger(uni.getStorageSync("app-log-level"));

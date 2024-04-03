@@ -13,16 +13,22 @@
       }
     },
     {
-      "path": "pages/calendar/calendar",
+      "path": "pages/login/login",
       "style": {
-        "navigationBarTitleText": "日历",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/user/user",
+      "style": {
+        "navigationBarTitleText": "我的",
         "navigationStyle": "default"
       }
     },
     {
-      "path": "pages/events/events",
+      "path": "pages/shoppingcard/shoppingcard",
       "style": {
-        "navigationBarTitleText": "事件",
+        "navigationBarTitleText": "购物车",
         "navigationStyle": "default"
       }
     },
@@ -31,8 +37,7 @@
       "style": {
         "navigationBarTitleText": "信息",
         "navigationStyle": "default"
-      },
-      "preload": true
+      }
     }
   ],
   "tabBar": {
@@ -46,7 +51,7 @@
         "selectedIconPath": "static/tabbar-icons/family-active.png"
       },
       {
-        "pagePath": "pages/events/events",
+        "pagePath": "pages/shoppingcard/shoppingcard",
         "iconPath": "static/tabbar-icons/events.png",
         "selectedIconPath": "static/tabbar-icons/events-active.png"
       },
@@ -56,7 +61,7 @@
         "selectedIconPath": "static/tabbar-icons/message-active.png"
       },
       {
-        "pagePath": "pages/calendar/calendar",
+        "pagePath": "pages/user/user",
         "iconPath": "static/tabbar-icons/calendar.png",
         "selectedIconPath": "static/tabbar-icons/calendar-active.png"
       }

@@ -1,6 +1,6 @@
 <template>
-  <h1>Message</h1>
-  <TabBar path="/pages/message/message" />
+  <h1>Shoppingcard</h1>
+  <TabBar path="/pages/shoppingcard/shoppingcard" />
 </template>
 
 <script setup>

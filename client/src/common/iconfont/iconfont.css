@@ -1,30 +1,39 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4487328 */
-  src:
-    url("iconfont.woff2?t=1711718354450") format("woff2"),
-    url("iconfont.woff?t=1711718354450") format("woff"),
-    url("iconfont.ttf?t=1711718354450") format("truetype");
+  src: url('iconfont.woff2?t=1712122598044') format('woff2'),
+       url('iconfont.woff?t=1712122598044') format('woff'),
+       url('iconfont.ttf?t=1712122598044') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
+  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-HomeOutline:before {
+.icon-talk-reduce:before {
   content: "\e672";
 }
 
-.icon-AdvisoryOutline:before {
-  content: "\e668";
+.icon-user:before {
+  content: "\e68a";
 }
 
-.icon-PlanetOutline:before {
-  content: "\e6ad";
+.icon-home:before {
+  content: "\e6c7";
 }
 
-.icon-CalendarOutline:before {
-  content: "\e66a";
+.icon-shoppingcart:before {
+  content: "\e6d6";
 }
+
+.icon-QQ:before {
+  content: "\e882";
+}
+
+.icon-wechat-fill:before {
+  content: "\e883";
+}
+
