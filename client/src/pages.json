@@ -46,24 +46,16 @@
     "height": 0,
     "list": [
       {
-        "pagePath": "pages/home/home",
-        "iconPath": "static/tabbar-icons/family.png",
-        "selectedIconPath": "static/tabbar-icons/family-active.png"
+        "pagePath": "pages/home/home"
       },
       {
-        "pagePath": "pages/shoppingcard/shoppingcard",
-        "iconPath": "static/tabbar-icons/events.png",
-        "selectedIconPath": "static/tabbar-icons/events-active.png"
+        "pagePath": "pages/shoppingcard/shoppingcard"
       },
       {
-        "pagePath": "pages/message/message",
-        "iconPath": "static/tabbar-icons/message.png",
-        "selectedIconPath": "static/tabbar-icons/message-active.png"
+        "pagePath": "pages/message/message"
       },
       {
-        "pagePath": "pages/user/user",
-        "iconPath": "static/tabbar-icons/calendar.png",
-        "selectedIconPath": "static/tabbar-icons/calendar-active.png"
+        "pagePath": "pages/user/user"
       }
     ]
   },
