@@ -80,7 +80,7 @@ defineExpose({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .book-list-container {
   padding-left: 30rpx;
   padding-right: 30rpx;

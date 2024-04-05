@@ -36,7 +36,7 @@ const bookTypes = reactive([
 ]);
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .type-item {
   color: "#eee";
   padding: 20rpx 0;
