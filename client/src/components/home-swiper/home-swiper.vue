@@ -3,7 +3,7 @@
     :list="list"
     keyName="image"
     showTitle
-    :title-style="{ color: 'red', textAlign: 'center' }"
+    :title-style="{ textAlign: 'center' }"
     :autoplay="false"
     circular
   ></uv-swiper>

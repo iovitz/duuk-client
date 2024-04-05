@@ -57,6 +57,7 @@
     "@octokit/core": "5.0.1",
     "esbuild": "0.20.2",
     "lodash": "4.17.21",
+    "nanoid": "^5.0.6",
     "pinia": "2.0.36",
     "pinia-plugin-persistedstate": "3.2.0",
     "vue": "3.3.11",

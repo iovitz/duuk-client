@@ -35,8 +35,7 @@
     {
       "path": "pages/message/message",
       "style": {
-        "navigationBarTitleText": "信息",
-        "navigationStyle": "default"
+        "navigationStyle": "custom"
       }
     }
   ],
