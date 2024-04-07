@@ -2,28 +2,27 @@
 import { onLaunch, onShow, onHide, onReady } from "@dcloudio/uni-app";
 
 onLaunch(async (e) => {
-  // uni.switchTab({
-  //   url: "/pages/message/message",
-  //   success(e) {
-  //     uni.switchTab({
-  //       url: "/pages/events/events",
-  //       success(e) {
-  //         uni.switchTab({
-  //           url: "/pages/calendar/calendar",
-  //           success(e) {
-  //             uni.switchTab({
-  //               url: "/pages/home/home",
-  //               success(e) {
-  //                 console.log("###", e);
-  //                 plus.navigator.closeSplashscreen();
-  //               },
-  //             });
-  //           },
-  //         });
-  //       },
-  //     });
-  //   },
-  // });
+  uni.switchTab({
+    url: "/pages/message/message",
+    success(e) {
+      uni.switchTab({
+        url: "/pages/user/user",
+        success(e) {
+          uni.switchTab({
+            url: "/pages/shoppingcard/shoppingcard",
+            success(e) {
+              uni.switchTab({
+                url: "/pages/home/home",
+                success(e) {
+                  plus.navigator.closeSplashscreen();
+                },
+              });
+            },
+          });
+        },
+      });
+    },
+  });
 });
 onShow(() => {});
 
@@ -52,6 +51,6 @@ page {
     Noto Sans CJK SC,
     WenQuanYi Micro Hei,
     sans-serif;
-  background-color: #eff6fc;
+  background-color: #fff;
 }
 </style>

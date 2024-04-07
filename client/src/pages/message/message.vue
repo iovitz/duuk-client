@@ -1,4 +1,5 @@
 <template>
+  <uv-status-bar />
   <view class="header block-container"> 消息 </view>
   <view class="block-container">
     <uv-search

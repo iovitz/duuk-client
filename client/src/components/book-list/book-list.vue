@@ -82,9 +82,9 @@ defineExpose({
 
 <style lang="scss" scoped>
 .book-list-container {
-  padding-left: 30rpx;
-  padding-right: 30rpx;
+  padding: 30rpx 30rpx 0 30rpx;
   display: flex;
+  background-color: #eff6fc;
   .l-side {
     margin-right: 30rpx;
   }

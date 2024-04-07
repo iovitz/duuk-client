@@ -1,12 +1,18 @@
 <template>
   <view class="book-list-item">
-    <uv-image
-      :src="props.poster"
-      :observeLazyLoad="true"
-      :width="props.w + 'px'"
-      :height="props.h + 'px'"
-      mode="widthFix"
-    />
+    <view class="image-wrapper" :style="imageStyle">
+      <uv-image
+        :src="props.poster"
+        :observeLazyLoad="true"
+        :width="props.w + 'px'"
+        :height="props.h + 'px'"
+        mode="widthFix"
+      >
+        <template v-slot:loading>
+          <LoadingIcon />
+        </template>
+      </uv-image>
+    </view>
     <view class="name uv-line-1">{{ props.name }}</view>
     <view class="book-tag-wrapper">
       <uv-tags
@@ -30,6 +36,7 @@
 
 <script setup>
 import { computed } from "vue";
+import LoadingIcon from "@/components/loading-icon/loading-icon.vue";
 const props = defineProps({
   poster: String,
   name: String,
@@ -40,18 +47,21 @@ const props = defineProps({
 const imageStyle = computed(() => {
   return {
     height: props.h + "px",
-    width: props.w + "px",
+    // width: props.w + "px",
   };
 });
 </script>
 
 <style lang="scss" scoped>
 .book-list-item {
-  border-radius: 10rpx;
-  overflow: hidden;
   margin-bottom: 20rpx;
   padding-bottom: 20rpx;
   background-color: #fff;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.image-wrapper {
+  width: 100%;
 }
 .name {
   font-size: 32rpx;
