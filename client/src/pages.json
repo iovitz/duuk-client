@@ -33,7 +33,7 @@
       }
     },
     {
-      "path": "pages/message/message",
+      "path": "pages/discuss/discuss",
       "style": {
         "navigationStyle": "custom"
       }
@@ -51,7 +51,7 @@
         "pagePath": "pages/shoppingcard/shoppingcard"
       },
       {
-        "pagePath": "pages/message/message"
+        "pagePath": "pages/discuss/discuss"
       },
       {
         "pagePath": "pages/user/user"

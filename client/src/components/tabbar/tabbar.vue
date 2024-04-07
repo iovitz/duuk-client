@@ -22,7 +22,7 @@
         <text class="icon iconfont icon-shoppingcart"></text>
       </template>
     </uv-tabbar-item>
-    <uv-tabbar-item text="消息" name="/pages/message/message">
+    <uv-tabbar-item text="话题" name="/pages/discuss/discuss">
       <template #active-icon>
         <text class="icon active iconfont icon-talk-reduce"></text>
       </template>

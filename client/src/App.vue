@@ -3,7 +3,7 @@ import { onLaunch, onShow, onHide, onReady } from "@dcloudio/uni-app";
 
 onLaunch(async (e) => {
   uni.switchTab({
-    url: "/pages/message/message",
+    url: "/pages/discuss/discuss",
     success(e) {
       uni.switchTab({
         url: "/pages/user/user",
