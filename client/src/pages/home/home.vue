@@ -119,6 +119,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   padding: 0 30rpx;
+  background-color: #fff;
   .header-right-icon {
     height: 60rpx;
     width: 60rpx;

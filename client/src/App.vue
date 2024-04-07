@@ -52,7 +52,7 @@ page {
     Noto Sans CJK SC,
     WenQuanYi Micro Hei,
     sans-serif;
-  background-color: #f7f8f9;
+  background-color: #eff6fc;
 }
 </style>
 ./utils/router

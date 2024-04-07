@@ -1,5 +1,5 @@
 <template>
-  <uv-grid :col="4">
+  <uv-grid :col="4" class="book-type-wrapper">
     <uv-grid-item
       v-for="(item, index) in bookTypes"
       :key="index"
@@ -37,8 +37,10 @@ const bookTypes = reactive([
 </script>
 
 <style lang="scss" scoped>
+.book-type-wrapper {
+  background-color: #fff;
+}
 .type-item {
-  color: "#eee";
   padding: 20rpx 0;
   .icon-wrapper {
     height: 80rpx;

@@ -1,5 +1,5 @@
 {
-  "name": "@fumashop/client",
+  "name": "@duke/client",
   "version": "0.0.0",
   "scripts": {
     "dev:app": "uni -p app",
