@@ -35,7 +35,7 @@
 
 <script setup>
 import { reactive, ref, computed } from "vue";
-import BookListItem from "./book-list-item";
+import BookListItem from "./book-list-item.vue";
 import { useWaterFlowColumnWidth } from "./waterflow.hook.js";
 import { nanoid } from "nanoid";
 
@@ -58,8 +58,10 @@ defineExpose({
     for (let book of books) {
       const scaleRate = waterFlowColumnWidth.value / book.width;
       const height = book.height * scaleRate;
+      // 图片高度 + 描述高度 + marginBottom
+      const itemHeight = height + 50 + 20;
       if (list1Height.value <= list2Height.value) {
-        list1Height.value += height;
+        list1Height.value += itemHeight;
         list1.push({
           id: nanoid(),
           ...book,
@@ -67,7 +69,7 @@ defineExpose({
           h: height,
         });
       } else {
-        list2Height.value += height;
+        list2Height.value += itemHeight;
         list2.push({
           id: nanoid(),
           ...book,

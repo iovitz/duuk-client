@@ -64,14 +64,19 @@ function handleReloadImage(e) {
   background-color: #fff;
   border-radius: 10rpx;
   overflow: hidden;
+  box-shadow: 0px 20rpx 30rpx -6rpx rgba(0, 0, 0, 0.1);
 }
 .image-wrapper {
   width: 100%;
 }
 .book-info {
-  padding: 20rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20rpx;
+  justify-content: center;
   .book-name {
-    font-size: 28rpx;
+    font-size: 32rpx;
     margin-bottom: 10rpx;
   }
   .buy {
@@ -86,6 +91,7 @@ function handleReloadImage(e) {
     }
     .read {
       font-size: 24rpx;
+      color: $uv-tips-color;
     }
   }
 }
