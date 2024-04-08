@@ -1,5 +1,5 @@
 {
-    "name" : "",
+    "name" : "杜克书城",
     "appid" : "__UNI__5ADA9F1",
     "description" : "",
     "versionName" : "1.0.0",
@@ -41,9 +41,13 @@
                 ]
             },
             /* ios打包配置 */
-            "ios" : {},
+            "ios" : {
+                "dSYMs" : false
+            },
             /* SDK配置 */
-            "sdkConfigs" : {},
+            "sdkConfigs" : {
+                "ad" : {}
+            },
             "splashscreen" : {
                 "androidStyle" : "default",
                 "android" : {
