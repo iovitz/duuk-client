@@ -2,41 +2,32 @@
   <view class="book-list-item">
     <view class="image-wrapper" :style="imageStyle">
       <uv-image
-        :src="props.poster"
+        :src="imageUrl"
         :observeLazyLoad="true"
         :width="props.w + 'px'"
         :height="props.h + 'px'"
         mode="widthFix"
+        @error="handleReloadImage"
       >
         <template v-slot:loading>
           <LoadingIcon />
         </template>
       </uv-image>
     </view>
-    <view class="name uv-line-1">{{ props.name }}</view>
-    <view class="book-tag-wrapper">
-      <uv-tags
-        text="标签"
-        class="book-tag"
-        plain
-        shape="circle"
-        size="mini"
-      ></uv-tags>
-      <uv-tags
-        text="标签"
-        class="book-tag"
-        plain
-        shape="circle"
-        size="mini"
-      ></uv-tags>
+    <view class="book-info">
+      <view class="book-name uv-line-1">{{ props.name }}</view>
+      <view class="buy">
+        <view class="price"> <text class="price-icon">¥</text>13 </view>
+        <view class="read">1300人在读</view>
+      </view>
     </view>
-    <view class="info"> 2000人买过 </view>
   </view>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import LoadingIcon from "@/components/loading-icon/loading-icon.vue";
+import { logger } from "@/utils/logger";
 const props = defineProps({
   poster: String,
   name: String,
@@ -47,15 +38,29 @@ const props = defineProps({
 const imageStyle = computed(() => {
   return {
     height: props.h + "px",
-    // width: props.w + "px",
   };
 });
+
+let retryTimes = ref(0);
+const imageUrl = computed(() => {
+  if (retryTimes.value === 0) {
+    return props.poster;
+  }
+  return props.poster + `?retry=${retryTimes.value}`;
+});
+
+function handleReloadImage(e) {
+  logger.error("图片加载失败", retryTimes, e);
+  if (retryTimes.value === 3) {
+    return;
+  }
+  retryTimes.value++;
+}
 </script>
 
 <style lang="scss" scoped>
 .book-list-item {
   margin-bottom: 20rpx;
-  padding-bottom: 20rpx;
   background-color: #fff;
   border-radius: 10rpx;
   overflow: hidden;
@@ -63,20 +68,25 @@ const imageStyle = computed(() => {
 .image-wrapper {
   width: 100%;
 }
-.name {
-  font-size: 32rpx;
-  font-weight: bold;
-  padding: 6rpx 10rpx;
-}
-.book-tag-wrapper {
-  display: flex;
-  padding: 0 10rpx;
-  .book-tag {
-    margin-right: 10rpx;
+.book-info {
+  padding: 20rpx;
+  .book-name {
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
   }
-}
-.info {
-  padding: 0 6rpx;
-  font-size: 24rpx;
+  .buy {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    .price-icon {
+      font-size: 24rpx;
+    }
+    .price {
+      font-size: 32rpx;
+    }
+    .read {
+      font-size: 24rpx;
+    }
+  }
 }
 </style>

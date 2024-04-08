@@ -11,12 +11,23 @@
     <uv-modal ref="modal" title="标题">
       <view class="slot-content"> h1h1 </view>
     </uv-modal>
-    <scroll-view :scroll-y="true" :style="`height: ${scrollViewHeight}px`">
+    <scroll-view
+      :scroll-y="true"
+      :style="`height: ${scrollViewHeight}px`"
+      @scrolltolower="loadBookList"
+    >
       <home-swiper />
       <HomeBookType />
       <Heading title="热销书籍" moreText="查看更多" />
       <!-- LoadMore -->
       <BookList ref="bookListRef" />
+      <uv-load-more
+        status="loading"
+        :customStyle="{
+          margin: 0,
+          padding: '10px 0',
+        }"
+      />
     </scroll-view>
   </view>
   <TabBar path="/pages/home/home" />
@@ -30,86 +41,46 @@ import Heading from "@/components/heading/heading";
 import HomeBookType from "@/components/home-book-type/home-book-type";
 import BookList from "@/components/book-list/book-list";
 import { useScrollViewHeight } from "@/hooks/scroll-view-height";
+import { logger } from "@/utils/logger";
+import { onLoad } from "@dcloudio/uni-app";
 
 const { scrollViewHeight, setOccupiedPx } = useScrollViewHeight();
 setOccupiedPx(50 + 50);
 
+function getRandomBookItem() {
+  const width = 400;
+  const randomRate = Math.random() * 1 + 0.8;
+  const height = parseInt(`${randomRate * width}`);
+  return {
+    name: `图书${width}-${height}`,
+    width,
+    height,
+    poster: `https://fpoimg.com/${width}x${height}?bg_color=#0000ff`,
+    price: Math.abs(width - height),
+  };
+}
+
 const bookListRef = ref(null);
-onMounted(() => {
-  bookListRef.value.addToList([
-    {
-      poster: "https://via.placeholder.com/100x110.png/3c9cff/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 100,
-      height: 110,
-    },
-    {
-      poster: "https://via.placeholder.com/200x220.png/f9ae3d/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 200,
-      height: 220,
-    },
-    {
-      poster: "https://via.placeholder.com/300x340.png/5ac725/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 300,
-      height: 340,
-    },
-    {
-      poster: "https://via.placeholder.com/400x400.png/f56c6c/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 400,
-      height: 400,
-    },
-    {
-      poster: "https://via.placeholder.com/500x510.png/909399/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 500,
-      height: 510,
-    },
-    {
-      poster: "https://via.placeholder.com/600x606.png/3c9cff/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 600,
-      height: 606,
-    },
-    {
-      poster: "https://via.placeholder.com/310x422.png/f1a532/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 310,
-      height: 422,
-    },
-    {
-      poster: "https://via.placeholder.com/320x430.png/3c9cff/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 320,
-      height: 430,
-    },
-    {
-      poster: "https://via.placeholder.com/330x424.png/f9ae3d/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 330,
-      height: 424,
-    },
-    {
-      poster: "https://via.placeholder.com/340x435.png/5ac725/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 340,
-      height: 435,
-    },
-    {
-      poster: "https://via.placeholder.com/350x440.png/f56c6c/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 350,
-      height: 440,
-    },
-    {
-      poster: "https://via.placeholder.com/380x470.png/909399/fff",
-      name: "啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发啊额发额发",
-      width: 380,
-      height: 470,
-    },
-  ]);
+let isLoading = false;
+async function loadBookList() {
+  if (isLoading) return false;
+  isLoading = true;
+  logger.verbose("加载更多图书");
+  const fetchPromise = new Promise((resolve) => {
+    const res = [];
+    for (let i = 0; i < 20; i++) {
+      res.push(getRandomBookItem());
+    }
+    setTimeout(() => {
+      resolve(res);
+    }, 1000);
+  });
+  const res = await fetchPromise;
+  bookListRef.value.addToList(res);
+  isLoading = false;
+}
+onLoad(() => {
+  loadBookList();
 });
 </script>
 

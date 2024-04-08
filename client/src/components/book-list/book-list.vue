@@ -84,7 +84,6 @@ defineExpose({
 .book-list-container {
   padding: 30rpx 30rpx 0 30rpx;
   display: flex;
-  background-color: #eff6fc;
   .l-side {
     margin-right: 30rpx;
   }
