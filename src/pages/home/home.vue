@@ -52,9 +52,9 @@ function getRandomBookItem() {
   const height = parseInt(`${randomRate * width}`);
   return {
     name: `图书${width}-${height}`,
-    width,
-    height,
-    poster: `https://fpoimg.com/${width}x${height}?bg_color=#0000ff`,
+    width: 150,
+    height: 150,
+    poster: `http://img3m6.ddimg.cn/87/11/29490306-1_u_8.jpg`,
     price: Math.abs(width - height),
   };
 }
