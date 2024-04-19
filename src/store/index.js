@@ -1,5 +1,7 @@
 import { createPinia } from "pinia";
 import { createPersistedState } from "pinia-plugin-persistedstate";
+export * from "./app.store";
+export * from "./book.store";
 
 export const pinia = createPinia();
 
@@ -18,7 +20,7 @@ pinia.use(
 	}),
 );
 
-if (typeof window !== "undefined") {
+if (typeof self !== "undefined") {
 	// @ts-ignore
-	window.pinia = pinia;
+	self.pinia = pinia;
 }

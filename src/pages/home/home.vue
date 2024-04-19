@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import TabBar from "@/components/tabbar/tabbar.vue";
 import HomeSwiper from "@/components/home-swiper/home-swiper.vue";
 import Heading from "@/components/heading/heading.vue";
@@ -42,6 +42,7 @@ import HomeBookType from "@/components/home-book-type/home-book-type.vue";
 import BookList from "@/components/book-list/book-list.vue";
 import { useScrollViewHeight } from "@/hooks/scroll-view-height";
 import { logger } from "@/utils/logger";
+import { onLoad } from "@dcloudio/uni-app";
 
 const { scrollViewHeight, setOccupiedPx } = useScrollViewHeight();
 setOccupiedPx(50 + 50);
@@ -78,7 +79,8 @@ async function loadBookList() {
   bookListRef.value.addToList(res);
   isLoading = false;
 }
-onMounted(() => {
+onLoad((options) => {
+  console.log("###home", options);
   loadBookList();
 });
 </script>

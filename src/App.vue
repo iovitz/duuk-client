@@ -1,28 +1,16 @@
 <script setup>
 import { onLaunch, onShow, onHide, onReady } from "@dcloudio/uni-app";
+import { preloadTabbarPages } from "./utils/router";
+import { useAppStore } from "./store";
 
 onLaunch(async (e) => {
-  uni.switchTab({
-    url: "/pages/discuss/discuss",
-    success(e) {
-      uni.switchTab({
-        url: "/pages/user/user",
-        success(e) {
-          uni.switchTab({
-            url: "/pages/shoppingcard/shoppingcard",
-            success(e) {
-              uni.switchTab({
-                url: "/pages/home/home",
-                success(e) {
-                  plus.navigator.closeSplashscreen();
-                },
-              });
-            },
-          });
-        },
-      });
-    },
-  });
+  const appStore = useAppStore();
+  console.log(e);
+  if (!appStore.ready) {
+    await preloadTabbarPages(e.path, "/pages/shoppingcard/shoppingcard");
+    appStore.setAppReady();
+    console.log("###页面加载完成");
+  }
 });
 onShow(() => {});
 

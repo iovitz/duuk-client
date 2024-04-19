@@ -1,5 +1,8 @@
-import logger from "../logger";
+import { getTrue } from "../common/common";
+import { logger } from "../logger";
 import { getSession } from "../storage";
+// @ts-ignore
+import pages from "@/pages.json";
 
 // 未登录路由白名单
 const whiteList = ["/pages/entry/entry"];
@@ -32,4 +35,33 @@ export function RouterGaide(url) {
 		return false;
 	}
 	return true;
+}
+
+export function switchTabPromise(url) {
+	return new Promise((success, fail) => {
+		uni.switchTab({
+			url,
+			success,
+			fail,
+		});
+	});
+}
+
+export function preloadTabbarPages(currentPath, jumpTo) {
+	// #ifdef APP-PLUS
+	if (getTrue()) {
+		let promise = new Promise((resolve) => resolve());
+		pages.tabBar.list.forEach((tabbarItem) => {
+			if (tabbarItem.pagePath === currentPath) return;
+			promise = promise.then(() => switchTabPromise(`/${tabbarItem.pagePath}`));
+		});
+		promise
+			.then(() => switchTabPromise(jumpTo))
+			.finally(() => {
+				plus.navigator.closeSplashscreen();
+			});
+		return promise;
+	}
+	// #endif
+	return;
 }
