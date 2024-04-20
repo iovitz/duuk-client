@@ -2,14 +2,17 @@
 import { onLaunch, onShow, onHide, onReady } from "@dcloudio/uni-app";
 import { preloadTabbarPages } from "./utils/router";
 import { useAppStore } from "./store";
+import { logger } from "./utils/logger";
 
 onLaunch(async (e) => {
+  logger.verbose("App启动参数", e);
   const appStore = useAppStore();
-  console.log(e);
+  console.log(appStore.ready);
   if (!appStore.ready) {
-    await preloadTabbarPages(e.path, "/pages/shoppingcard/shoppingcard");
-    appStore.setAppReady();
-    console.log("###页面加载完成");
+    await preloadTabbarPages(e.path, "/pages/shoppingcard/shoppingcard", () => {
+      logger.verbose("页面加载完成");
+      appStore.setAppReady();
+    });
   }
 });
 onShow(() => {});

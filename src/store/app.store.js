@@ -10,7 +10,7 @@ export const useAppStore = defineStore("app", {
 	},
 	state: () => {
 		return {
-			ready: true,
+			ready: false,
 		};
 	},
 	actions: {

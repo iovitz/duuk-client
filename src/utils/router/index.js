@@ -1,4 +1,3 @@
-import { getTrue } from "../common/common";
 import { logger } from "../logger";
 import { getSession } from "../storage";
 // @ts-ignore
@@ -11,18 +10,6 @@ const launchPageUrl = "/pages/launch/launch";
 let launched = false;
 
 export function RouterGaide(url) {
-	// if (!launched) {
-	// 	launched = true;
-	// 	uni.navigateTo({
-	// 		url: "/pages/launch/launch",
-	// 	});
-	// 	return;
-	// }
-
-	// // 启动页相关配置
-	// if (url === launchPageUrl && launched) {
-	// 	return;
-	// }
 	if (whiteList.includes(url)) {
 		return true;
 	}
@@ -47,21 +34,21 @@ export function switchTabPromise(url) {
 	});
 }
 
-export function preloadTabbarPages(currentPath, jumpTo) {
-	// #ifdef APP-PLUS
-	if (getTrue()) {
-		let promise = new Promise((resolve) => resolve());
-		pages.tabBar.list.forEach((tabbarItem) => {
-			if (tabbarItem.pagePath === currentPath) return;
-			promise = promise.then(() => switchTabPromise(`/${tabbarItem.pagePath}`));
+export function preloadTabbarPages(currentPath, jumpTo, onLoaded) {
+	let promise = new Promise((resolve) => resolve());
+	pages.tabBar.list.forEach((tabbarItem) => {
+		if (tabbarItem.pagePath === currentPath) return;
+		promise = promise.then(() => switchTabPromise(`/${tabbarItem.pagePath}`));
+	});
+	promise
+		.then(() => {
+			onLoaded();
+			switchTabPromise(jumpTo);
+		})
+		.finally(() => {
+			// #ifdef APP-PLUS
+			plus.navigator.closeSplashscreen();
+			// #endif
 		});
-		promise
-			.then(() => switchTabPromise(jumpTo))
-			.finally(() => {
-				plus.navigator.closeSplashscreen();
-			});
-		return promise;
-	}
-	// #endif
-	return;
+	return promise;
 }

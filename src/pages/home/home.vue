@@ -43,6 +43,7 @@ import BookList from "@/components/book-list/book-list.vue";
 import { useScrollViewHeight } from "@/hooks/scroll-view-height";
 import { logger } from "@/utils/logger";
 import { onLoad } from "@dcloudio/uni-app";
+import { useAppStore } from "@/store";
 
 const { scrollViewHeight, setOccupiedPx } = useScrollViewHeight();
 setOccupiedPx(50 + 50);
@@ -79,8 +80,8 @@ async function loadBookList() {
   bookListRef.value.addToList(res);
   isLoading = false;
 }
+
 onLoad((options) => {
-  console.log("###home", options);
   loadBookList();
 });
 </script>

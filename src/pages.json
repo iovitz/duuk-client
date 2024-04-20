@@ -10,7 +10,7 @@
       "path": "pages/shoppingcard/shoppingcard",
       "style": {
         "navigationBarTitleText": "购物车",
-        "navigationStyle": "default"
+        "navigationStyle": "custom"
       }
     },
     {
