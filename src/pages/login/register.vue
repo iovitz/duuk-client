@@ -104,18 +104,13 @@ const { verifyCode, reflashVerifyCode } = useVerifyCode(
 );
 
 function handleSubmit() {
-  console.log(formRef);
   formRef.value
     .validate()
     .then((res) => {
-      logger.verbose("表单校验成功", res);
-      uni.showToast({
-        icon: "success",
-        title: "校验通过",
-      });
+      logger.success("表单校验成功", res);
     })
     .catch((errors) => {
-      logger.error(errors, "表单校验失败");
+      logger.error("表单校验失败", errors);
     });
 }
 </script>

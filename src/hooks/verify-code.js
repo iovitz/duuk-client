@@ -22,7 +22,7 @@ export function useVerifyCode(idSelector, width, field) {
 			);
 			verifyCodeSvg.value = res;
 		} catch (e) {
-			logger.error(e, "获取验证码失败");
+			logger.error("获取验证码失败", e);
 		}
 	}
 

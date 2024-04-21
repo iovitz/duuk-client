@@ -39,13 +39,10 @@ class Http {
 				// 直接把响应体返回
 				return res.data;
 			}
-			logger.error(
-				{
-					statusCode,
-					res,
-				},
-				"#请求出错",
-			);
+			logger.error("#请求出错", {
+				statusCode,
+				res,
+			});
 			switch (statusCode) {
 				case 401:
 					storage.remove("session");

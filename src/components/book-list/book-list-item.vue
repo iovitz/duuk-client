@@ -50,13 +50,10 @@ const imageUrl = computed(() => {
 });
 
 function handleReloadImage(e) {
-  logger.error(
-    {
-      retryTimes,
-      e,
-    },
-    "图片加载失败",
-  );
+  logger.error("图片加载失败", {
+    retryTimes,
+    e,
+  });
   if (retryTimes.value === 3) {
     return;
   }
