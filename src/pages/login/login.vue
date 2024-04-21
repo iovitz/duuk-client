@@ -1,16 +1,19 @@
 <template>
   <view class="login-page-container">
     <view class="form-container">
-      <view class="logo"> 风马商场 </view>
-      <uv-form
-        labelPosition="left"
-        :model="loginInfo"
-        :rules="rules"
-        ref="form"
-      >
-        <uv-form-item prop="userInfo.sex">
+      <view class="logo"> DUUK </view>
+      <uv-form labelPosition="left" :model="loginInfo" ref="form">
+        <uv-form-item prop="userInfo.phone">
           <uv-input
             placeholder="请输入手机号"
+            shape="circle"
+            v-model="phoneNumber"
+          />
+        </uv-form-item>
+        <uv-form-item prop="userInfo.password">
+          <uv-input
+            placeholder="请输入密码"
+            type="password"
             shape="circle"
             v-model="phoneNumber"
           />
@@ -54,7 +57,6 @@ function handleQQLogin() {
 <style lang="scss" scoped>
 .logo {
   font-size: 1.6em;
-  font-style: italic;
   font-weight: bold;
   text-align: center;
   margin-bottom: 1em;
@@ -62,7 +64,7 @@ function handleQQLogin() {
 .login-page-container {
   height: 100%;
   width: 100%;
-  padding-top: 300rpx;
+  padding-top: 200rpx;
   box-sizing: border-box;
 }
 .form-container {

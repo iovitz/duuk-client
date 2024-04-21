@@ -9,10 +9,10 @@ onLaunch(async (e) => {
   const appStore = useAppStore();
   console.log(appStore.ready);
   if (!appStore.ready) {
-    await preloadTabbarPages(e.path, "/pages/shoppingcard/shoppingcard", () => {
-      logger.verbose("页面加载完成");
-      appStore.setAppReady();
-    });
+    // await preloadTabbarPages(e.path, "/pages/shoppingcard/shoppingcard", () => {
+    //   logger.verbose("页面加载完成");
+    //   appStore.setAppReady();
+    // });
   }
 });
 onShow(() => {});
