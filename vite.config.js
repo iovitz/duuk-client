@@ -17,11 +17,11 @@ export default {
 	transpileDependencies: ["@dcloudio/uni-ui"],
 	server: {
 		proxy: {
-			// "/api": {
-			// 	// 本地开发
-			// 	target: "http://127.0.0.1:8061",
-			// 	changeOrigin: true,
-			// },
+			"/api": {
+				// 本地开发
+				target: "http://127.0.0.1:3333",
+				changeOrigin: true,
+			},
 		},
 	},
 };

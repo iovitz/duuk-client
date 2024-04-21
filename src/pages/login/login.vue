@@ -1,27 +1,48 @@
+<!-- eslint-disable vue/no-v-text-v-html-on-component -->
 <template>
   <view class="login-page-container">
     <view class="form-container">
       <view class="logo"> DUUK图书 </view>
-      <uv-form labelPosition="left" :model="loginInfo" ref="form">
-        <uv-form-item prop="userInfo.phone">
+      <uv-form
+        labelPosition="left"
+        :model="formData"
+        ref="form"
+        labelWidth="6em"
+      >
+        <uv-form-item prop="username" label="用户名：">
           <uv-input
-            placeholder="请输入账号名"
-            shape="circle"
-            v-model="phoneNumber"
+            placeholder="请输入用户名"
+            v-model="formData.username"
             maxlength="16"
           />
         </uv-form-item>
-        <uv-form-item prop="userInfo.password">
+        <uv-form-item prop="password" label="密码：">
           <uv-input
             placeholder="请输入密码"
             type="password"
-            shape="circle"
-            v-model="phoneNumber"
+            v-model="formData.password"
             maxlength="16"
           />
         </uv-form-item>
-        <uv-button type="primary" shape="circle" customStyle="margin-top: 10px">
-          获取验证码
+        <uv-form-item label="验证码：" prop="code">
+          <uv-input
+            placeholder="请输入验证码"
+            type="text"
+            v-model="formData.code"
+            id="login-verify-code"
+            maxlength="4"
+            :customStyle="{
+              marginRight: '10px',
+            }"
+          />
+          <view
+            :style="{ fontSize: 0 }"
+            @click="reflashVerifyCode"
+            v-html="verifyCode"
+          ></view>
+        </uv-form-item>
+        <uv-button type="primary" customStyle="margin-top: 10px">
+          登录
         </uv-button>
         <view class="options">
           <text @click="goRegister">注册</text> |
@@ -43,13 +64,21 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { logger } from "@/utils/logger";
-const phoneNumber = ref("");
+import { useVerifyCode } from "@/hooks/verify-code";
 
-const loginInfo = {
-  phone: "",
+const formData = {
+  username: "",
+  password: "",
+  code: "",
 };
+
+const { verifyCode, reflashVerifyCode } = useVerifyCode(
+  "#login-verify-code",
+  120,
+  "login",
+);
 
 function handleWXLogin() {
   logger.verbose("登录WX");

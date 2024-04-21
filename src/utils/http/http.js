@@ -1,7 +1,8 @@
-import logger from "../logger";
+import { getConfig } from "../config";
+import { logger } from "../logger";
 import { storage } from "../storage/storage";
 
-class ShortChain {
+class Http {
 	constructor(config) {
 		this.config = config;
 	}
@@ -38,7 +39,13 @@ class ShortChain {
 				// 直接把响应体返回
 				return res.data;
 			}
-			logger.error("#请求出错", statusCode, res);
+			logger.error(
+				{
+					statusCode,
+					res,
+				},
+				"#请求出错",
+			);
 			switch (statusCode) {
 				case 401:
 					storage.remove("session");
@@ -82,12 +89,12 @@ class ShortChain {
 	}
 }
 
-let baseURL = import.meta.env.VITE_API_PREFIX;
+let baseURL = getConfig("VITE_API_PREFIX");
 // #ifdef  APP-PLUS
-baseURL = import.meta.env.VITE_BASE_URL + import.meta.env.VITE_API_PREFIX;
+baseURL = getConfig("VITE_BASE_URL") + getConfig("VITE_API_PREFIX");
 // #endif
 
-export const commonRequest = new ShortChain({
+export const http = new Http({
 	baseURL,
 	timeout: 60000,
 	header: {},

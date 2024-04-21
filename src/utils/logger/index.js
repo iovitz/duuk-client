@@ -11,20 +11,20 @@ export class Logger {
 		this.level = Number(level ? level : LogLevel.verbose);
 	}
 
-	verbose(message, ...args) {
-		if (LogLevel.verbose >= this.level) console.log(message, ...args);
+	verbose(message, payload) {
+		if (LogLevel.verbose >= this.level) console.log(payload, message);
 	}
 
-	info(message, ...args) {
-		if (LogLevel.info >= this.level) console.info(message, ...args);
+	info(message, payload) {
+		if (LogLevel.info >= this.level) console.info(payload, message);
 	}
 
-	warn(message, ...args) {
-		if (LogLevel.warning >= this.level) console.warn(message, ...args);
+	warn(message, payload) {
+		if (LogLevel.warning >= this.level) console.warn(payload, message);
 	}
 
-	error(message, ...args) {
-		if (LogLevel.error >= this.level) console.error(message, ...args);
+	error(message, payload) {
+		if (LogLevel.error >= this.level) console.error(payload, message);
 	}
 }
 

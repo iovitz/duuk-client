@@ -5,7 +5,6 @@
         <uv-form-item prop="userInfo.phone">
           <uv-input
             placeholder="请输入账号名"
-            shape="circle"
             v-model="phoneNumber"
             maxlength="16"
           />
@@ -14,12 +13,11 @@
           <uv-input
             placeholder="请输入密码"
             type="password"
-            shape="circle"
             v-model="phoneNumber"
             maxlength="16"
           />
         </uv-form-item>
-        <uv-button type="primary" shape="circle" customStyle="margin-top: 10px">
+        <uv-button type="primary" customStyle="margin-top: 10px">
           获取验证码
         </uv-button>
       </uv-form>
