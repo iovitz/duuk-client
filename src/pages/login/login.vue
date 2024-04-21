@@ -1,13 +1,14 @@
 <template>
   <view class="login-page-container">
     <view class="form-container">
-      <view class="logo"> DUUK </view>
+      <view class="logo"> DUUK图书 </view>
       <uv-form labelPosition="left" :model="loginInfo" ref="form">
         <uv-form-item prop="userInfo.phone">
           <uv-input
-            placeholder="请输入手机号"
+            placeholder="请输入账号名"
             shape="circle"
             v-model="phoneNumber"
+            maxlength="16"
           />
         </uv-form-item>
         <uv-form-item prop="userInfo.password">
@@ -16,11 +17,16 @@
             type="password"
             shape="circle"
             v-model="phoneNumber"
+            maxlength="16"
           />
         </uv-form-item>
         <uv-button type="primary" shape="circle" customStyle="margin-top: 10px">
           获取验证码
         </uv-button>
+        <view class="options">
+          <text @click="goRegister">注册</text> |
+          <text @click="goReset">忘记密码</text>
+        </view>
       </uv-form>
       <view class="input-phone-number"> </view>
     </view>
@@ -51,6 +57,17 @@ function handleWXLogin() {
 
 function handleQQLogin() {
   logger.verbose("登录qq");
+}
+
+function goRegister() {
+  uni.navigateTo({
+    url: "/pages/login/register",
+  });
+}
+function goReset() {
+  uni.navigateTo({
+    url: "/pages/login/reset",
+  });
 }
 </script>
 
@@ -99,5 +116,9 @@ function handleQQLogin() {
 }
 .wx-auth {
   margin-right: 60rpx;
+}
+.options {
+  margin-top: 2em;
+  text-align: center;
 }
 </style>

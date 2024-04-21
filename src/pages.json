@@ -7,22 +7,35 @@
   },
   "pages": [
     {
+      "path": "pages/login/login",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/login/register",
+      "style": {
+        "navigationBarTitleText": "注册Duuk",
+        "navigationStyle": "default"
+      }
+    },
+    {
+      "path": "pages/login/reset",
+      "style": {
+        "navigationBarTitleText": "重置密码",
+        "navigationStyle": "default"
+      }
+    },
+    {
       "path": "pages/shoppingcard/shoppingcard",
       "style": {
-        "navigationBarTitleText": "购物车",
-        "navigationStyle": "custom"
+        "navigationBarTitleText": "购物车"
       }
     },
     {
       "path": "pages/home/home",
       "style": {
         "navigationBarTitleText": "首页"
-      }
-    },
-    {
-      "path": "pages/login/login",
-      "style": {
-        "navigationStyle": "custom"
       }
     },
     {

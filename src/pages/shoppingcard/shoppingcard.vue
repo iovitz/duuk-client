@@ -1,7 +1,7 @@
 <template>
   <view class="tabbar-page-container page-style">
     <uv-navbar
-      placeholder="true"
+      :placeholder="true"
       title="购物车"
       height="50"
       leftIcon=""
