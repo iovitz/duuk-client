@@ -2,10 +2,11 @@
   <scroll-view
     :scroll-y="true"
     class="message-scroll-view"
-    :style="`height: ${props.scrollHeight}px`"
+    :style="`height: ${props.height}px`"
     :scroll-with-animation="true"
     :show-scrollbar="false"
   >
+    1
     <view class="chat-message-list">
       <view
         :class="{

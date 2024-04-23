@@ -43,10 +43,8 @@ import BookList from "@/components/book-list/book-list.vue";
 import { useScrollHeight } from "@/hooks/scroll-height";
 import { logger } from "@/utils/logger";
 import { onLoad } from "@dcloudio/uni-app";
-import { useAppStore } from "@/store";
 
-const { scrollHeight, setOccupiedPx } = useScrollHeight();
-setOccupiedPx(50 + 50);
+const { scrollHeight } = useScrollHeight(50 + 50);
 
 function getRandomBookItem() {
   const width = 400;

@@ -1,9 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4487328 */
-  src:
-    url("iconfont.woff2?t=1712144974350") format("woff2"),
-    url("iconfont.woff?t=1712144974350") format("woff"),
-    url("iconfont.ttf?t=1712144974350") format("truetype");
+  src: url('iconfont.woff2?t=1713881368551') format('woff2'),
+       url('iconfont.woff?t=1713881368551') format('woff'),
+       url('iconfont.ttf?t=1713881368551') format('truetype');
 }
 
 .iconfont {
@@ -12,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add-circle:before {
+  content: "\e664";
+}
+
+.icon-mic:before {
+  content: "\e678";
+}
+
+.icon-smile:before {
+  content: "\e67e";
 }
 
 .icon-gas:before {
@@ -53,3 +64,4 @@
 .icon-wechat-fill:before {
   content: "\e883";
 }
+

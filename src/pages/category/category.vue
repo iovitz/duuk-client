@@ -32,8 +32,7 @@
 import { useScrollHeight } from "@/hooks/scroll-height";
 import { ref } from "vue";
 
-const { scrollHeight, setOccupiedPx } = useScrollHeight();
-setOccupiedPx(44);
+const { scrollHeight } = useScrollHeight(44);
 
 const list = ref([
   {

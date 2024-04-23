@@ -1,0 +1,108 @@
+<template>
+  <view
+    :class="{
+      'input-editor-container': true,
+      'edit-mode': !!inputMode,
+    }"
+    :style="{
+      bottom: `${keyboardHeight}px`,
+    }"
+  >
+    <i class="editor-icon iconfont icon-mic" @click="toggleKeyboardAndMic"></i>
+
+    <uv-textarea
+      v-model="inputValue"
+      class="input-textarea"
+      border="none"
+      placeholder="聊点什么吧"
+      :height="inputMode ? '150rpx' : '50rpx'"
+      :adjustPosition="false"
+      @focus="handleInputFocus"
+      @blur="handleInputBlur"
+      @keyboardheightchange="handkeKeyboardChange"
+      :textStyle="{
+        lineHeight: inputMode ? '1.15em' : '50rpx',
+      }"
+    ></uv-textarea>
+    <i v-show="!inputValue" class="editor-icon iconfont icon-smile"></i>
+    <i v-show="!inputValue" class="editor-icon iconfont icon-add-circle"></i>
+
+    <uv-button
+      class="send-button"
+      type="primary"
+      @tap="handleSendMessage"
+      :disabled="!inputValue"
+      v-show="inputValue"
+    >
+      发送
+    </uv-button>
+  </view>
+</template>
+
+<script setup>
+import { logger } from "@/utils/logger";
+import { ref } from "vue";
+
+const inputValue = ref("");
+const keyboardHeight = ref(0);
+const inputMode = ref(false);
+// 键盘弹起事件
+const handkeKeyboardChange = (res) => {
+  keyboardHeight.value = res.detail?.height ?? 0;
+};
+
+const handleSendMessage = () => {
+  logger.verbose("发送消息", inputValue.value);
+  inputValue.value = "";
+};
+
+const handleInputFocus = () => {
+  logger.verbose("输入框Focus");
+  inputMode.value = true;
+};
+
+const handleInputBlur = () => {
+  logger.verbose("输入框Blur");
+  inputMode.value = false;
+};
+
+const toggleKeyboardAndMic = () => {
+  logger.verbose("切换消息类型");
+};
+</script>
+
+<style lang="scss" scoped>
+.input-editor-container {
+  height: 100rpx;
+  display: flex;
+  background: $uv-bg-color;
+  align-items: center;
+  padding: 0 20rpx;
+  gap: 10rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  &.edit-mode {
+    height: 200rpx;
+  }
+}
+.editor-icon {
+  font-size: 40rpx;
+  display: inline-block;
+  line-height: 70rpx;
+  width: 50rpx;
+  text-align: center;
+}
+.input-textarea {
+  padding: 10rpx;
+  line-height: 100rpx;
+}
+.editor-icon,
+.send-button {
+  height: 70rpx;
+  align-self: flex-end;
+  margin-bottom: 15rpx;
+}
+</style>

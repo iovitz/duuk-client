@@ -53,8 +53,7 @@ import { useScrollHeight } from "@/hooks/scroll-height";
 
 const appStore = useAppStore();
 
-const { scrollHeight, setOccupiedPx } = useScrollHeight();
-setOccupiedPx(50 + 50 + 70);
+const { scrollHeight } = useScrollHeight(50 + 50 + 70);
 
 onLoad((options) => {
   console.log(appStore.ready);
