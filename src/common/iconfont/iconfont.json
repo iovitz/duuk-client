@@ -6,6 +6,104 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "39768175",
+      "name": "type-jjx",
+      "font_class": "a-caijingzoushiqushi",
+      "unicode": "e7ea",
+      "unicode_decimal": 59370
+    },
+    {
+      "icon_id": "39768176",
+      "name": "type-jsj",
+      "font_class": "daima",
+      "unicode": "e7eb",
+      "unicode_decimal": 59371
+    },
+    {
+      "icon_id": "39768177",
+      "name": "type-jz",
+      "font_class": "a-gongsichengshijianzhu",
+      "unicode": "e7ec",
+      "unicode_decimal": 59372
+    },
+    {
+      "icon_id": "39768186",
+      "name": "type-xlx",
+      "font_class": "a-huazhiwu",
+      "unicode": "e7ed",
+      "unicode_decimal": 59373
+    },
+    {
+      "icon_id": "39768190",
+      "name": "type-gl",
+      "font_class": "a-luxianfangxiangdaohangweizhi",
+      "unicode": "e7ee",
+      "unicode_decimal": 59374
+    },
+    {
+      "icon_id": "39768206",
+      "name": "type-fl",
+      "font_class": "a-shaloujiazaishijian",
+      "unicode": "e7ef",
+      "unicode_decimal": 59375
+    },
+    {
+      "icon_id": "39768207",
+      "name": "type-ys",
+      "font_class": "a-yansesecaiseka",
+      "unicode": "e7f0",
+      "unicode_decimal": 59376
+    },
+    {
+      "icon_id": "39768209",
+      "name": "type-shkx",
+      "font_class": "a-ufoyuzhoufeichuanwaixingfeichuanwaixingren",
+      "unicode": "e7f1",
+      "unicode_decimal": 59377
+    },
+    {
+      "icon_id": "39768659",
+      "name": "type-wx",
+      "font_class": "books",
+      "unicode": "e7f2",
+      "unicode_decimal": 59378
+    },
+    {
+      "icon_id": "39768665",
+      "name": "type-zrkx",
+      "font_class": "measure",
+      "unicode": "e7f4",
+      "unicode_decimal": 59380
+    },
+    {
+      "icon_id": "39768668",
+      "name": "type-lz",
+      "font_class": "platform",
+      "unicode": "e7f6",
+      "unicode_decimal": 59382
+    },
+    {
+      "icon_id": "39768670",
+      "name": "type-zj",
+      "font_class": "rest",
+      "unicode": "e7f7",
+      "unicode_decimal": 59383
+    },
+    {
+      "icon_id": "39768674",
+      "name": "type-ls",
+      "font_class": "subway",
+      "unicode": "e7f8",
+      "unicode_decimal": 59384
+    },
+    {
+      "icon_id": "39768675",
+      "name": "type-wh",
+      "font_class": "wine",
+      "unicode": "e7fa",
+      "unicode_decimal": 59386
+    },
+    {
       "icon_id": "15838425",
       "name": "add-circle",
       "font_class": "add-circle",
@@ -25,34 +123,6 @@
       "font_class": "smile",
       "unicode": "e67e",
       "unicode_decimal": 59006
-    },
-    {
-      "icon_id": "22273409",
-      "name": "gas",
-      "font_class": "gas",
-      "unicode": "e6bf",
-      "unicode_decimal": 59071
-    },
-    {
-      "icon_id": "22273625",
-      "name": "drawing",
-      "font_class": "drawing",
-      "unicode": "e6e7",
-      "unicode_decimal": 59111
-    },
-    {
-      "icon_id": "22273644",
-      "name": "science",
-      "font_class": "science",
-      "unicode": "e6eb",
-      "unicode_decimal": 59115
-    },
-    {
-      "icon_id": "22273653",
-      "name": "book",
-      "font_class": "book",
-      "unicode": "e6ee",
-      "unicode_decimal": 59118
     },
     {
       "icon_id": "22273020",

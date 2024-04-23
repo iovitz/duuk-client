@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4487328 */
-  src: url('iconfont.woff2?t=1713881368551') format('woff2'),
-       url('iconfont.woff?t=1713881368551') format('woff'),
-       url('iconfont.ttf?t=1713881368551') format('truetype');
+  src: url('iconfont.woff2?t=1713893002804') format('woff2'),
+       url('iconfont.woff?t=1713893002804') format('woff'),
+       url('iconfont.ttf?t=1713893002804') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,62 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-a-caijingzoushiqushi:before {
+  content: "\e7ea";
+}
+
+.icon-daima:before {
+  content: "\e7eb";
+}
+
+.icon-a-gongsichengshijianzhu:before {
+  content: "\e7ec";
+}
+
+.icon-a-huazhiwu:before {
+  content: "\e7ed";
+}
+
+.icon-a-luxianfangxiangdaohangweizhi:before {
+  content: "\e7ee";
+}
+
+.icon-a-shaloujiazaishijian:before {
+  content: "\e7ef";
+}
+
+.icon-a-yansesecaiseka:before {
+  content: "\e7f0";
+}
+
+.icon-a-ufoyuzhoufeichuanwaixingfeichuanwaixingren:before {
+  content: "\e7f1";
+}
+
+.icon-books:before {
+  content: "\e7f2";
+}
+
+.icon-measure:before {
+  content: "\e7f4";
+}
+
+.icon-platform:before {
+  content: "\e7f6";
+}
+
+.icon-rest:before {
+  content: "\e7f7";
+}
+
+.icon-subway:before {
+  content: "\e7f8";
+}
+
+.icon-wine:before {
+  content: "\e7fa";
 }
 
 .icon-add-circle:before {
@@ -23,22 +79,6 @@
 
 .icon-smile:before {
   content: "\e67e";
-}
-
-.icon-gas:before {
-  content: "\e6bf";
-}
-
-.icon-drawing:before {
-  content: "\e6e7";
-}
-
-.icon-science:before {
-  content: "\e6eb";
-}
-
-.icon-book:before {
-  content: "\e6ee";
 }
 
 .icon-talk-reduce:before {

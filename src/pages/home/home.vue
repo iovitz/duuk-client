@@ -17,6 +17,7 @@
       @scrolltolower="loadBookList"
     >
       <home-swiper />
+      <Heading title="书籍类别" moreText="查看更多" />
       <HomeBookType />
       <Heading title="热销书籍" moreText="查看更多" />
       <!-- LoadMore -->
