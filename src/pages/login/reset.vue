@@ -1,5 +1,6 @@
 <template>
   <view class="register-page-container">
+    <uv-navbar title="重置密码" :placeholder="true" autoBack></uv-navbar>
     <view class="form-container">
       <uv-form labelPosition="left" :model="formData" ref="form">
         <uv-form-item prop="userInfo.phone">

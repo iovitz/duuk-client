@@ -1,6 +1,7 @@
 <!-- eslint-disable vue/no-v-text-v-html-on-component -->
 <template>
   <view class="register-page-container">
+    <uv-navbar title="加入DUUK" :placeholder="true" autoBack></uv-navbar>
     <view class="form-container">
       <uv-form
         labelPosition="left"
@@ -46,10 +47,9 @@
             }"
           />
           <view
-            class="verify-code"
             @click="reflashVerifyCode"
             v-html="verifyCode"
-            :style="{ fontSize: 0 }"
+            :style="{ fontSize: 0, width: '120px' }"
           ></view>
         </uv-form-item>
         <uv-button
@@ -123,9 +123,5 @@ function handleSubmit() {
 }
 .form-container {
   padding: 30rpx;
-}
-.verify-code {
-  height: 100%;
-  width: 120px;
 }
 </style>

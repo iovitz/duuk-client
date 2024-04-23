@@ -36,7 +36,7 @@
             }"
           />
           <view
-            :style="{ fontSize: 0 }"
+            :style="{ fontSize: 0, width: '120px' }"
             @click="reflashVerifyCode"
             v-html="verifyCode"
           ></view>

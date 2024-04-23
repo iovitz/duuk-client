@@ -13,7 +13,7 @@
     </uv-modal>
     <scroll-view
       :scroll-y="true"
-      :style="`height: ${scrollViewHeight}px`"
+      :style="`height: ${scrollHeight}px`"
       @scrolltolower="loadBookList"
     >
       <home-swiper />
@@ -40,12 +40,12 @@ import HomeSwiper from "@/components/home-swiper/home-swiper.vue";
 import Heading from "@/components/heading/heading.vue";
 import HomeBookType from "@/components/home-book-type/home-book-type.vue";
 import BookList from "@/components/book-list/book-list.vue";
-import { useScrollViewHeight } from "@/hooks/scroll-view-height";
+import { useScrollHeight } from "@/hooks/scroll-height";
 import { logger } from "@/utils/logger";
 import { onLoad } from "@dcloudio/uni-app";
 import { useAppStore } from "@/store";
 
-const { scrollViewHeight, setOccupiedPx } = useScrollViewHeight();
+const { scrollHeight, setOccupiedPx } = useScrollHeight();
 setOccupiedPx(50 + 50);
 
 function getRandomBookItem() {
@@ -104,3 +104,4 @@ onLoad((options) => {
   }
 }
 </style>
+@/hooks/scroll-height

@@ -1,6 +1,6 @@
 import { onMounted, ref, computed } from "vue";
 
-export function useScrollViewHeight() {
+export function useScrollHeight() {
 	const statusBarHeight = ref(0);
 	const screenHeight = ref(0);
 	const height = ref(0);
@@ -12,7 +12,7 @@ export function useScrollViewHeight() {
 		height.value =
 			sysInfo.screenHeight - sysInfo.statusBarHeight - occupiedPx.value;
 	});
-	const scrollViewHeight = computed(() => {
+	const scrollHeight = computed(() => {
 		return screenHeight.value - statusBarHeight.value - occupiedPx.value;
 	});
 
@@ -20,7 +20,7 @@ export function useScrollViewHeight() {
 		occupiedPx.value = v;
 	};
 	return {
-		scrollViewHeight,
+		scrollHeight,
 		setOccupiedPx,
 	};
 }

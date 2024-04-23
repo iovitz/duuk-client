@@ -7,6 +7,18 @@
   },
   "pages": [
     {
+      "path": "pages/chat/chat",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/category/category",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
       "path": "pages/login/login",
       "style": {
         "navigationStyle": "custom"
@@ -16,14 +28,14 @@
       "path": "pages/login/register",
       "style": {
         "navigationBarTitleText": "注册Duuk",
-        "navigationStyle": "default"
+        "navigationStyle": "custom"
       }
     },
     {
       "path": "pages/login/reset",
       "style": {
         "navigationBarTitleText": "重置密码",
-        "navigationStyle": "default"
+        "navigationStyle": "custom"
       }
     },
     {

@@ -9,7 +9,7 @@
     <scroll-view
       :scroll-y="true"
       class="book-list"
-      :style="`height: ${scrollViewHeight}px`"
+      :style="`height: ${scrollHeight}px`"
     >
       <uv-radio-group>
         <view class="book-item" v-for="i in 10" :key="i">
@@ -49,11 +49,11 @@
 import TabBar from "@/components/tabbar/tabbar.vue";
 import { useAppStore } from "@/store";
 import { onLoad } from "@dcloudio/uni-app";
-import { useScrollViewHeight } from "@/hooks/scroll-view-height";
+import { useScrollHeight } from "@/hooks/scroll-height";
 
 const appStore = useAppStore();
 
-const { scrollViewHeight, setOccupiedPx } = useScrollViewHeight();
+const { scrollHeight, setOccupiedPx } = useScrollHeight();
 setOccupiedPx(50 + 50 + 70);
 
 onLoad((options) => {
@@ -107,3 +107,4 @@ onLoad((options) => {
   padding: 0 20rpx;
 }
 </style>
+@/hooks/scroll-height
