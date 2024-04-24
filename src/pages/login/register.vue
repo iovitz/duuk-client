@@ -1,6 +1,7 @@
 <!-- eslint-disable vue/no-v-text-v-html-on-component -->
 <template>
   <view class="register-page-container">
+    <uv-toast ref="toastRef"></uv-toast>
     <uv-navbar title="加入DUUK" :placeholder="true" autoBack></uv-navbar>
     <view class="form-container">
       <uv-form
@@ -75,6 +76,7 @@ import { useUserStore } from "@/store";
 const userStore = useUserStore();
 
 const formRef = ref(null);
+const toastRef = ref(null);
 
 const formData = ref({
   code: "",
@@ -111,8 +113,18 @@ function handleSubmit() {
     .then(async (res) => {
       logger.success("表单校验成功", res);
       await userStore.register(formData.value);
+      toastRef.value.show({
+        type: "success",
+        message: "注册成功正在跳转...",
+        position: "bottom",
+      });
     })
     .catch((errors) => {
+      toastRef.value.show({
+        type: "error",
+        message: "注册失败",
+        position: "bottom",
+      });
       logger.error("表单校验失败", errors);
     });
 }
