@@ -2,6 +2,7 @@ import { createPinia } from "pinia";
 import { createPersistedState } from "pinia-plugin-persistedstate";
 export * from "./app.store";
 export * from "./book.store";
+export * from "./user.store";
 
 export const pinia = createPinia();
 

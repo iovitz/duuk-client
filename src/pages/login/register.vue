@@ -71,6 +71,8 @@ import { useVerifyCode } from "@/hooks/verify-code";
 import { logger } from "@/utils/logger";
 import { http } from "@/utils/http/http";
 import { passwordRule, usernameRule, verifyCodeRule } from "@/utils/rules";
+import { useUserStore } from "@/store";
+const userStore = useUserStore();
 
 const formRef = ref(null);
 
@@ -106,8 +108,9 @@ const { verifyCode, reflashVerifyCode } = useVerifyCode(
 function handleSubmit() {
   formRef.value
     .validate()
-    .then((res) => {
+    .then(async (res) => {
       logger.success("表单校验成功", res);
+      await userStore.register(formData.value);
     })
     .catch((errors) => {
       logger.error("表单校验失败", errors);
