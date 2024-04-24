@@ -8,7 +8,7 @@
       bottom: `${keyboardHeight}px`,
     }"
   >
-    <i class="editor-icon iconfont icon-mic" @click="toggleKeyboardAndMic"></i>
+    <i class="editor-icon iconfont icon-mic1" @click="toggleKeyboardAndMic"></i>
 
     <uv-textarea
       v-model="inputValue"
@@ -24,8 +24,8 @@
         lineHeight: inputMode ? '1.15em' : '50rpx',
       }"
     ></uv-textarea>
-    <i v-show="!inputValue" class="editor-icon iconfont icon-smile"></i>
-    <i v-show="!inputValue" class="editor-icon iconfont icon-add-circle"></i>
+    <i class="editor-icon iconfont icon-emot-smile"></i>
+    <i v-show="!inputValue" class="editor-icon iconfont icon-message-add"></i>
 
     <uv-button
       class="send-button"
@@ -78,7 +78,7 @@ const toggleKeyboardAndMic = () => {
   background: $uv-bg-color;
   align-items: center;
   padding: 0 20rpx;
-  gap: 10rpx;
+  gap: 20rpx;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -89,7 +89,6 @@ const toggleKeyboardAndMic = () => {
   }
 }
 .editor-icon {
-  font-size: 40rpx;
   display: inline-block;
   line-height: 70rpx;
   width: 50rpx;

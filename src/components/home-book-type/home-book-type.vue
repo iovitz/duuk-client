@@ -24,20 +24,20 @@ const bookTypes = reactive([
     url: "https://duukbook.oss-cn-beijing.aliyuncs.com/static/type-wx.svg",
   },
   {
-    name: "社会科学",
-    url: "https://duukbook.oss-cn-beijing.aliyuncs.com/static/type-shkx.svg",
+    name: "艺术",
+    url: "https://duukbook.oss-cn-beijing.aliyuncs.com/static/type-ys.svg",
   },
   {
     name: "心理学",
     url: "https://duukbook.oss-cn-beijing.aliyuncs.com/static/type-xlx.svg",
   },
   {
-    name: "艺术",
-    url: "https://duukbook.oss-cn-beijing.aliyuncs.com/static/type-ys.svg",
-  },
-  {
     name: "历史",
     url: "https://duukbook.oss-cn-beijing.aliyuncs.com/static/type-ls.svg",
+  },
+  {
+    name: "社会科学",
+    url: "https://duukbook.oss-cn-beijing.aliyuncs.com/static/type-shkx.svg",
   },
   {
     name: "自然科学",
@@ -64,7 +64,7 @@ const bookTypes = reactive([
     url: "https://duukbook.oss-cn-beijing.aliyuncs.com/static/type-jjx.svg",
   },
   {
-    name: "自然科学",
+    name: "法律",
     url: "https://duukbook.oss-cn-beijing.aliyuncs.com/static/type-fl.svg",
   },
   {

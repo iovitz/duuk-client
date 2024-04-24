@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4487328 */
-  src: url('iconfont.woff2?t=1713893002804') format('woff2'),
-       url('iconfont.woff?t=1713893002804') format('woff'),
-       url('iconfont.ttf?t=1713893002804') format('truetype');
+  src: url('iconfont.woff2?t=1713920279242') format('woff2'),
+       url('iconfont.woff?t=1713920279242') format('woff'),
+       url('iconfont.ttf?t=1713920279242') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,30 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-knowledge:before {
+  content: "\e705";
+}
+
+.icon-message-add:before {
+  content: "\e675";
+}
+
+.icon-user-group:before {
+  content: "\e68c";
+}
+
+.icon-emot-smile:before {
+  content: "\e69b";
+}
+
+.icon-mic1:before {
+  content: "\e6a0";
+}
+
+.icon-menu:before {
+  content: "\e6f3";
 }
 
 .icon-a-caijingzoushiqushi:before {
@@ -67,18 +91,6 @@
 
 .icon-wine:before {
   content: "\e7fa";
-}
-
-.icon-add-circle:before {
-  content: "\e664";
-}
-
-.icon-mic:before {
-  content: "\e678";
-}
-
-.icon-smile:before {
-  content: "\e67e";
 }
 
 .icon-talk-reduce:before {

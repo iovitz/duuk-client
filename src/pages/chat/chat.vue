@@ -1,13 +1,8 @@
 <template>
   <view class="chat-page-container">
-    <uv-navbar title="雾凇的雾" :placeholder="true">
+    <uv-navbar title="雾凇的雾" :placeholder="true" :autoBack="true">
       <template #right>
-        <text
-          class="iconfont icon-user"
-          :style="{
-            fontSize: '40rpx',
-          }"
-        ></text>
+        <text class="iconfont icon-user"></text>
       </template>
     </uv-navbar>
     <MessageList :height="scrollHeight" :messageList="messageList" />

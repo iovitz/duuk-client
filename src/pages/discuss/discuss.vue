@@ -1,6 +1,12 @@
 <template>
-  <uv-status-bar />
-  <view class="header block-container"> 讨论 </view>
+  <uv-navbar title="聊天列表" :placeholder="true">
+    <template #left>
+      <text class="iconfont icon-user-group"></text>
+    </template>
+    <template #right>
+      <text class="iconfont icon-menu" @tap="handleOpenPopup"></text>
+    </template>
+  </uv-navbar>
   <view class="block-container">
     <uv-search
       inputAlign="center"
@@ -9,6 +15,15 @@
       :showAction="false"
     />
   </view>
+
+  <uv-action-sheet
+    ref="actionSheetRef"
+    :actions="list"
+    title="标题"
+    @select="actionSheetSelect"
+    cancelText="取消"
+  >
+  </uv-action-sheet>
   <uv-list>
     <uv-swipe-action>
       <uv-swipe-action-item :options="swipeActionOptions">
@@ -21,6 +36,7 @@
               thumb-size="lg"
               clickable
               rightText="右侧文字"
+              @click="goChat"
             >
             </uv-list-item>
           </view>
@@ -35,7 +51,24 @@
 import { ref } from "vue";
 import TabBar from "@/components/tabbar/tabbar.vue";
 import { nanoid } from "nanoid";
+import { logger } from "@/utils/logger";
 
+const actionSheetRef = ref(null);
+
+const list = ref([
+  {
+    name: "开放能力-分享",
+    openType: "share",
+  },
+  {
+    name: "开放能力-获取用户信息",
+    openType: "getUserInfo",
+  },
+  {
+    name: "开放能力-客服会话",
+    openType: "contact",
+  },
+]);
 const swipeActionOptions = ref([
   {
     text: "删除",
@@ -49,6 +82,21 @@ const discussList = [
     r_user: "1200",
   },
 ];
+
+function goChat() {
+  uni.navigateTo({
+    url: "/pages/chat/chat",
+  });
+}
+
+function handleOpenPopup() {
+  logger.verbose("#", actionSheetRef);
+  actionSheetRef.value?.open();
+}
+
+function actionSheetSelect(e) {
+  logger.verbose("Popup Change", e);
+}
 </script>
 
 <style lang="scss" scoped>

@@ -2,9 +2,9 @@
   <view class="tabbar-page-container page-style">
     <uv-status-bar />
     <view class="header">
-      <uv-search inputAlign="center" height="35" :showAction="false" />
-      <view class="header-right-icon">
-        <i class="iconfont icon-PlanetOutline"></i>
+      <uv-search inputAlign="center" :showAction="false" />
+      <view class="header-right-icon" @click="goBookCategory">
+        <i class="iconfont icon-knowledge" style="font-size: 50rpx"></i>
       </view>
     </view>
 
@@ -60,6 +60,12 @@ function getRandomBookItem() {
   };
 }
 
+function goBookCategory() {
+  uni.navigateTo({
+    url: "/pages/category/category",
+  });
+}
+
 const bookListRef = ref(null);
 let isLoading = false;
 async function loadBookList() {
@@ -87,7 +93,7 @@ onLoad((options) => {
 
 <style lang="scss" scoped>
 .header {
-  height: 50px;
+  height: 88rpx;
   display: flex;
   align-items: center;
   padding: 0 30rpx;
