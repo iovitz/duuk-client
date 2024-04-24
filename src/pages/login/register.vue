@@ -115,7 +115,7 @@ function handleSubmit() {
       await userStore.register(formData.value);
       toastRef.value.show({
         type: "success",
-        message: "注册成功正在跳转...",
+        message: "注册成功",
         position: "bottom",
       });
     })
