@@ -4,7 +4,7 @@
     <view class="header">
       <uv-search inputAlign="center" :showAction="false" />
       <view class="header-right-icon" @click="goBookCategory">
-        <i class="iconfont icon-knowledge" style="font-size: 50rpx"></i>
+        <i class="dicon dicon-knowledge" style="font-size: 50rpx"></i>
       </view>
     </view>
 

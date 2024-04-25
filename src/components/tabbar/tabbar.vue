@@ -8,34 +8,34 @@
   >
     <uv-tabbar-item text="首页" name="/pages/home/home">
       <template #active-icon>
-        <text class="icon active iconfont icon-home"></text>
+        <text class="icon active dicon dicon-home"></text>
       </template>
       <template #inactive-icon>
-        <text class="icon iconfont icon-home"></text>
+        <text class="icon dicon dicon-home"></text>
       </template>
     </uv-tabbar-item>
     <uv-tabbar-item text="购物车" name="/pages/shoppingcard/shoppingcard">
       <template #active-icon>
-        <text class="icon active iconfont icon-shoppingcart"></text>
+        <text class="icon active dicon dicon-shoppingcart"></text>
       </template>
       <template #inactive-icon>
-        <text class="icon iconfont icon-shoppingcart"></text>
+        <text class="icon dicon dicon-shoppingcart"></text>
       </template>
     </uv-tabbar-item>
     <uv-tabbar-item text="聊天" name="/pages/discuss/discuss">
       <template #active-icon>
-        <text class="icon active iconfont icon-talk-reduce"></text>
+        <text class="icon active dicon dicon-talk-reduce"></text>
       </template>
       <template #inactive-icon>
-        <text class="icon iconfont icon-talk-reduce"></text>
+        <text class="icon dicon dicon-talk-reduce"></text>
       </template>
     </uv-tabbar-item>
     <uv-tabbar-item text="我的" name="/pages/user/user">
       <template #active-icon>
-        <text class="icon active iconfont icon-user"></text>
+        <text class="icon active dicon dicon-user"></text>
       </template>
       <template #inactive-icon>
-        <text class="icon iconfont icon-user"></text>
+        <text class="icon dicon dicon-user"></text>
       </template>
     </uv-tabbar-item>
   </uv-tabbar>

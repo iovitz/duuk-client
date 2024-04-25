@@ -8,7 +8,7 @@
       bottom: `${keyboardHeight}px`,
     }"
   >
-    <i class="editor-icon iconfont icon-mic1" @click="toggleKeyboardAndMic"></i>
+    <i class="editor-icon dicon dicon-mic1" @click="toggleKeyboardAndMic"></i>
 
     <uv-textarea
       v-model="inputValue"
@@ -24,8 +24,8 @@
         lineHeight: inputMode ? '1.15em' : '50rpx',
       }"
     ></uv-textarea>
-    <i class="editor-icon iconfont icon-emot-smile"></i>
-    <i v-show="!inputValue" class="editor-icon iconfont icon-message-add"></i>
+    <i class="editor-icon dicon dicon-emot-smile"></i>
+    <i v-show="!inputValue" class="editor-icon dicon dicon-message-add"></i>
 
     <uv-button
       class="send-button"

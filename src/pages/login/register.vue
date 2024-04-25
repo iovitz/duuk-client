@@ -117,6 +117,12 @@ function handleSubmit() {
         type: "success",
         message: "注册成功",
         position: "bottom",
+        duration: 1000,
+        complete() {
+          uni.switchTab({
+            url: "/pages/home/home",
+          });
+        },
       });
     })
     .catch((errors) => {

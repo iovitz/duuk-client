@@ -30,7 +30,7 @@ onReady(() => {});
 @import "@/common/theme.scss";
 @import "@/common/style-fix.scss";
 @import "@/common/global.scss";
-@import "@/common/iconfont/iconfont.css";
+@import "@/common/iconfont.css";
 
 page {
   height: 100%;

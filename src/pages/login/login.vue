@@ -54,10 +54,15 @@
 
     <view class="auth-buttons">
       <view class="auth-button wx" @click="handleWXLogin">
-        <text class="iconfont icon-wechat-fill" />
+        <uv-icon
+          name="wechat-fill"
+          custom-prefix="duuk-icon"
+          size="30"
+          color="#fff"
+        />
       </view>
       <view class="auth-button qq" @click="handleQQLogin">
-        <text class="iconfont icon-QQ" />
+        <uv-icon name="QQ" custom-prefix="dicon" size="30" color="#fff" />
       </view>
     </view>
   </view>
@@ -132,9 +137,6 @@ function goReset() {
   justify-content: center;
   display: flex;
   color: #fff;
-  text {
-    font-size: 50rpx;
-  }
   &.wx {
     background-color: #56ab6e;
     margin-right: 60rpx;

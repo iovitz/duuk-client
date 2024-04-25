@@ -2,7 +2,7 @@
   <view class="chat-page-container">
     <uv-navbar title="雾凇的雾" :placeholder="true" :autoBack="true">
       <template #right>
-        <text class="iconfont icon-user"></text>
+        <text class="dicon dicon-user"></text>
       </template>
     </uv-navbar>
     <MessageList :height="scrollHeight" :messageList="messageList" />

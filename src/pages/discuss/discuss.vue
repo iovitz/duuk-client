@@ -1,10 +1,10 @@
 <template>
   <uv-navbar title="聊天列表" :placeholder="true">
     <template #left>
-      <text class="iconfont icon-user-group"></text>
+      <text class="dicon dicon-user-group"></text>
     </template>
     <template #right>
-      <text class="iconfont icon-menu" @tap="handleOpenPopup"></text>
+      <text class="dicon dicon-menu" @tap="handleOpenPopup"></text>
     </template>
   </uv-navbar>
   <view class="block-container">
@@ -99,8 +99,4 @@ function actionSheetSelect(e) {
 }
 </script>
 
-<style lang="scss" scoped>
-.header {
-  margin-top: var();
-}
-</style>
+<style lang="scss" scoped></style>
