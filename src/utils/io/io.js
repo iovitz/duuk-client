@@ -57,7 +57,7 @@ export class IO {
 	}
 
 	emit(event, payload) {
-		if (this.isWatching) {
+		if (!this.isWatching) {
 			logger.error("Socket Unwatch!");
 		}
 		const str = this.gzip(payload);
