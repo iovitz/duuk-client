@@ -13,7 +13,7 @@ export class Logger {
 		this.level = Number(level ? level : LogLevel.verbose);
 	}
 
-	verbose(message, payload) {
+	debug(message, payload) {
 		if (LogLevel.verbose >= this.level) {
 			console.log(c.whiteBright.bold.bgBlack(` [DEBUG] ${message} `), payload);
 		}

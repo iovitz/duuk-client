@@ -52,22 +52,22 @@ const handkeKeyboardChange = (res) => {
 };
 
 const handleSendMessage = () => {
-  logger.verbose("发送消息", inputValue.value);
+  logger.debug("发送消息", inputValue.value);
   inputValue.value = "";
 };
 
 const handleInputFocus = () => {
-  logger.verbose("输入框Focus");
+  logger.debug("输入框Focus");
   inputMode.value = true;
 };
 
 const handleInputBlur = () => {
-  logger.verbose("输入框Blur");
+  logger.debug("输入框Blur");
   inputMode.value = false;
 };
 
 const toggleKeyboardAndMic = () => {
-  logger.verbose("切换消息类型");
+  logger.debug("切换消息类型");
 };
 </script>
 

@@ -1,4 +1,4 @@
-import { http } from "@/utils/http/http";
+import { io } from "@/utils/io/io";
 import { logger } from "@/utils/logger";
 import { onMounted } from "vue";
 import { ref } from "vue";
@@ -11,13 +11,9 @@ export function useVerifyCode(idSelector, width, field) {
 
 	const verifyCodeSvg = ref("");
 
-	onMounted(() => {
-		reflashVerifyCode();
-	});
-
 	async function reflashVerifyCode() {
 		try {
-			const res = await http.get(
+			const res = await io.get(
 				`/service/verify-code?height=${size.value.height}&width=${width}&field=${field}`,
 			);
 			verifyCodeSvg.value = res;

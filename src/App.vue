@@ -5,11 +5,11 @@ import { useAppStore } from "./store";
 import { logger } from "./utils/logger";
 
 onLaunch(async (e) => {
-  logger.verbose("App启动参数", e);
+  logger.debug("App启动参数", e);
   const appStore = useAppStore();
   if (!appStore.ready) {
     // await preloadTabbarPages(e.path, "/pages/shoppingcard/shoppingcard", () => {
-    //   logger.verbose("页面加载完成");
+    //   logger.debug("页面加载完成");
     //   appStore.setAppReady();
     // });
     // #ifdef APP-PLUS

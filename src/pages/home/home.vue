@@ -71,7 +71,7 @@ let isLoading = false;
 async function loadBookList() {
   if (isLoading) return false;
   isLoading = true;
-  logger.verbose("加载更多图书");
+  logger.debug("加载更多图书");
   const fetchPromise = new Promise((resolve) => {
     const res = [];
     for (let i = 0; i < 20; i++) {

@@ -70,7 +70,6 @@
 import { onMounted, ref } from "vue";
 import { useVerifyCode } from "@/hooks/verify-code";
 import { logger } from "@/utils/logger";
-import { http } from "@/utils/http/http";
 import { passwordRule, usernameRule, verifyCodeRule } from "@/utils/rules";
 import { useUserStore } from "@/store";
 const userStore = useUserStore();

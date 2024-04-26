@@ -37,11 +37,11 @@ const formData = {
 };
 
 function handleWXLogin() {
-  logger.verbose("登录WX");
+  logger.debug("登录WX");
 }
 
 function handleQQLogin() {
-  logger.verbose("登录qq");
+  logger.debug("登录qq");
 }
 </script>
 

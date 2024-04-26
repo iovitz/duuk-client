@@ -99,12 +99,12 @@ function goChat() {
 }
 
 function handleOpenPopup() {
-  logger.verbose("#", actionSheetRef);
+  logger.debug("#", actionSheetRef);
   actionSheetRef.value?.open();
 }
 
 function actionSheetSelect(e) {
-  logger.verbose("Popup Change", e);
+  logger.debug("Popup Change", e);
 }
 </script>
 

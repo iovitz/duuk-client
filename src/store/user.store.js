@@ -1,4 +1,4 @@
-import { http } from "@/utils/http/http";
+import { io } from "@/utils/io/io";
 import { storage } from "@/utils/storage";
 import { defineStore } from "pinia";
 
@@ -17,7 +17,7 @@ export const useUserStore = defineStore("user", {
 	},
 	actions: {
 		async register(payload) {
-			const regRes = await http.post("/user/register", {
+			const regRes = await io.post("/user/register", {
 				uname: payload.username,
 				pwd: payload.password,
 				vcode: payload.code,
