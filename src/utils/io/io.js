@@ -37,7 +37,6 @@ export class IO {
 	initSocket() {
 		const { socket } = this;
 		socket.on("connect", () => {
-			console.error(socket.id);
 			logger.debug("Socket连接成功", socket.id);
 			socket.on(socket.id, (message) => {
 				logger.debug("ws 收到服务器消息：", message);
