@@ -7,7 +7,7 @@
       <text class="dicon dicon-menu" @tap="handleOpenPopup"></text>
     </template>
   </uv-navbar>
-  <view class="block-container">
+  <view class="search-container">
     <uv-search
       inputAlign="center"
       placeholder="讨论内容"
@@ -24,10 +24,10 @@
     cancelText="取消"
   >
   </uv-action-sheet>
-  <uv-list>
+  <uv-list :border="false">
     <uv-swipe-action>
       <uv-swipe-action-item :options="swipeActionOptions">
-        <view class="swipe-action uv-border-top uv-border-bottom">
+        <view class="swipe-action">
           <view class="swipe-action__content">
             <uv-list-item
               title="列表左侧带略缩图"
@@ -71,7 +71,16 @@ const list = ref([
 ]);
 const swipeActionOptions = ref([
   {
+    text: "置顶",
+    style: {
+      backgroundColor: "#3c9cff",
+    },
+  },
+  {
     text: "删除",
+    style: {
+      backgroundColor: "#f56c6c",
+    },
   },
 ]);
 const discussList = [
@@ -99,4 +108,9 @@ function actionSheetSelect(e) {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.search-container {
+  padding: 10rpx;
+  background-color: #fff;
+}
+</style>

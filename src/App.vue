@@ -44,6 +44,6 @@ page {
     Noto Sans CJK SC,
     WenQuanYi Micro Hei,
     sans-serif;
-  background-color: #fff;
+  background: $uv-bg-color;
 }
 </style>
