@@ -156,10 +156,7 @@ export class IO {
 	}
 }
 
-let baseURL = getConfig("VITE_API_PREFIX");
-// #ifdef  APP-PLUS
-baseURL = getConfig("VITE_BASE_URL") + getConfig("VITE_API_PREFIX");
-// #endif
+let baseURL = getConfig("VITE_BASE_URL");
 
 export const io = new IO(
 	{
