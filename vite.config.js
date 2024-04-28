@@ -24,4 +24,9 @@ export default {
 			},
 		},
 	},
+	resolve: {
+		alias: {
+			util: "util/",
+		},
+	},
 };
