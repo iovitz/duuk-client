@@ -31,7 +31,6 @@ onReady(() => {});
 @import "@/common/style-fix.scss";
 @import "@/common/global.scss";
 @import "@/common/iconfont.css";
-
 page {
   height: 100%;
   font-family:

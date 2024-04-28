@@ -1,5 +1,5 @@
 <template>
-  <view class="tabbar-page-container page-style">
+  <view class="tabbar-page-container">
     <uv-navbar
       :placeholder="true"
       title="购物车"
