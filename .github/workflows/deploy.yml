@@ -28,3 +28,4 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           source: 'dist/build/h5/*'
           target: 'duuk/web'
+          strip_components: 3
