@@ -18,8 +18,8 @@ export default {
 	server: {
 		proxy: {
 			"/api": {
-				// 本地开发
-				target: "http://127.0.0.1:3333",
+				target: "http://<server host>[:port]/", // 远程服务器
+				// target: "http://127.0.0.1:3333", // 本地开发
 				changeOrigin: true,
 			},
 		},
