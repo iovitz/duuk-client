@@ -7,6 +7,12 @@
   },
   "pages": [
     {
+      "path": "pages/contact/contact",
+      "style": {
+        "navigationBarTitleText": "好友列表"
+      }
+    },
+    {
       "path": "pages/home/home",
       "style": {
         "navigationBarTitleText": "Duuk图书"

@@ -49,16 +49,16 @@ const actionSheetRef = ref(null);
 
 const actionList = ref([
   {
-    name: "添加用户 / 加入讨论",
+    name: "添加用户",
     openType: "add",
+  },
+  {
+    name: "发起讨论",
+    openType: "create",
   },
   {
     name: "扫描二维码",
     openType: "scan",
-  },
-  {
-    name: "创建讨论",
-    openType: "create",
   },
 ]);
 const swipeActionOptions = ref([
