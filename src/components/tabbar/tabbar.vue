@@ -16,10 +16,10 @@
     </uv-tabbar-item>
     <uv-tabbar-item text="广场" name="/pages/square/square">
       <template #active-icon>
-        <text class="icon active dicon dicon-shoppingcart"></text>
+        <text class="icon active dicon dicon-aperture"></text>
       </template>
       <template #inactive-icon>
-        <text class="icon dicon dicon-shoppingcart"></text>
+        <text class="icon dicon dicon-aperture"></text>
       </template>
     </uv-tabbar-item>
     <uv-tabbar-item text="聊天" name="/pages/discuss/discuss">

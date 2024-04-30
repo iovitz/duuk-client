@@ -18,8 +18,7 @@
 
   <uv-action-sheet
     ref="actionSheetRef"
-    :actions="list"
-    title="标题"
+    :actions="actionList"
     @select="actionSheetSelect"
     cancelText="取消"
   >
@@ -55,18 +54,18 @@ import { logger } from "@/utils/logger";
 
 const actionSheetRef = ref(null);
 
-const list = ref([
+const actionList = ref([
   {
-    name: "开放能力-分享",
-    openType: "share",
+    name: "添加用户 / 加入讨论",
+    openType: "add",
   },
   {
-    name: "开放能力-获取用户信息",
-    openType: "getUserInfo",
+    name: "扫描二维码",
+    openType: "scan",
   },
   {
-    name: "开放能力-客服会话",
-    openType: "contact",
+    name: "创建讨论",
+    openType: "create",
   },
 ]);
 const swipeActionOptions = ref([
