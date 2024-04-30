@@ -42,7 +42,7 @@ const props = defineProps(["height", "messageList"]);
 
 const goToHome = (uid) => {
   uni.navigateTo({
-    url: "/pages/home/home?uid" + uid,
+    url: "home?uid" + uid,
   });
 };
 </script>

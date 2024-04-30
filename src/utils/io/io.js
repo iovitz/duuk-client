@@ -114,7 +114,7 @@ export class IO {
 				switch (statusCode) {
 					case 401:
 						uni.reLaunch({
-							url: "/pages/entry/entry",
+							url: "entry",
 						});
 						const title = res.message || "认证已经过期";
 						uni.showToast({

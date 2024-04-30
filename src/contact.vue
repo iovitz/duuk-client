@@ -57,7 +57,7 @@ const itemArr = ref([
 
 function handleGoSearch() {
   uni.navigateTo({
-    url: "pages/search/search",
+    url: "search",
   });
 }
 </script>

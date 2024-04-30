@@ -119,7 +119,7 @@ function handleSubmit() {
         duration: 1000,
         complete() {
           uni.switchTab({
-            url: "/pages/home/home",
+            url: "home",
           });
         },
       });

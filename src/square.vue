@@ -5,7 +5,7 @@
         <text class="dicon dicon-edit-text"></text>
       </template>
     </uv-navbar>
-    <TabBar path="/pages/square/square" />
+    <TabBar path="square" />
   </view>
 </template>
 

@@ -31,7 +31,7 @@
         }"
       />
     </scroll-view>
-    <TabBar path="/pages/home/home" />
+    <TabBar path="home" />
   </view>
 </template>
 
@@ -65,7 +65,7 @@ function getRandomBookItem() {
 
 function goBookCategory() {
   uni.navigateTo({
-    url: "/pages/category/category",
+    url: "category",
   });
 }
 
@@ -91,7 +91,7 @@ async function loadBookList() {
 
 function goSearch() {
   uni.navigateTo({
-    url: "/pages/search/search",
+    url: "search",
   });
 }
 

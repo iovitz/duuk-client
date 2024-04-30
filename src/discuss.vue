@@ -36,7 +36,7 @@
       </uv-swipe-action-item>
     </uv-swipe-action>
   </uv-list>
-  <TabBar path="/pages/discuss/discuss" />
+  <TabBar path="discuss" />
 </template>
 
 <script setup>
@@ -86,12 +86,12 @@ const discussList = [
 
 function goChat() {
   uni.navigateTo({
-    url: "/pages/chat/chat",
+    url: "chat",
   });
 }
 function handleGoSearch() {
   uni.navigateTo({
-    url: "/pages/search/search",
+    url: "search",
   });
 }
 

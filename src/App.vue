@@ -8,7 +8,7 @@ onLaunch(async (e) => {
   logger.debug("App启动参数", e);
   const appStore = useAppStore();
   if (!appStore.ready) {
-    // await preloadTabbarPages(e.path, "/pages/shoppingcard/shoppingcard", () => {
+    // await preloadTabbarPages(e.path, "home", () => {
     //   logger.debug("页面加载完成");
     //   appStore.setAppReady();
     // });

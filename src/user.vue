@@ -84,7 +84,7 @@
       ></uv-cell>
     </uv-cell-group>
   </scroll-view>
-  <TabBar path="/pages/user/user" />
+  <TabBar path="user" />
 </template>
 
 <script setup>

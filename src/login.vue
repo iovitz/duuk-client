@@ -95,12 +95,12 @@ function handleQQLogin() {
 
 function goRegister() {
   uni.navigateTo({
-    url: "/pages/login/register",
+    url: "register",
   });
 }
 function goReset() {
   uni.navigateTo({
-    url: "/pages/login/reset",
+    url: "reset",
   });
 }
 </script>
