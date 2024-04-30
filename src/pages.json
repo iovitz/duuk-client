@@ -7,6 +7,12 @@
   },
   "pages": [
     {
+      "path": "pages/square/square",
+      "style": {
+        "navigationBarTitleText": "Duuk图书"
+      }
+    },
+    {
       "path": "pages/home/home",
       "style": {
         "navigationBarTitleText": "Duuk图书"
@@ -62,7 +68,7 @@
         "pagePath": "pages/home/home"
       },
       {
-        "pagePath": "pages/shoppingcard/shoppingcard"
+        "pagePath": "pages/square/square"
       },
       {
         "pagePath": "pages/discuss/discuss"

@@ -14,7 +14,7 @@
         <text class="icon dicon dicon-home"></text>
       </template>
     </uv-tabbar-item>
-    <uv-tabbar-item text="购物车" name="/pages/shoppingcard/shoppingcard">
+    <uv-tabbar-item text="广场" name="/pages/square/square">
       <template #active-icon>
         <text class="icon active dicon dicon-shoppingcart"></text>
       </template>

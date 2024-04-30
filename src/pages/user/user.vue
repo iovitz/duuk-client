@@ -6,6 +6,8 @@
   </uv-navbar>
   <scroll-view :scroll-y="true" :style="`height: ${scrollHeight}px`">
     <uv-gap height="20rpx" bgColor="#f6f7f8"></uv-gap>
+    <view class="card"> </view>
+    <uv-gap height="20rpx" bgColor="#f6f7f8"></uv-gap>
 
     <view class="card order-menu">
       <uv-row justify="space-between">

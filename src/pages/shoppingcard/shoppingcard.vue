@@ -42,11 +42,9 @@
       <uv-button type="primary" text="结算书单"></uv-button>
     </view>
   </view>
-  <TabBar path="/pages/shoppingcard/shoppingcard" />
 </template>
 
 <script setup>
-import TabBar from "@/components/tabbar/tabbar.vue";
 import { useAppStore } from "@/store";
 import { onLoad } from "@dcloudio/uni-app";
 import { useScrollHeight } from "@/hooks/scroll-height";
