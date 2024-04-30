@@ -5,14 +5,16 @@
     </template>
     <template #right>
       <text class="dicon dicon-menu" @tap="handleOpenPopup"></text>
+      <text class="dicon dicon-search" @tap="handleOpenPopup"></text>
     </template>
   </uv-navbar>
   <view class="search-container">
     <uv-search
       inputAlign="center"
       placeholder="讨论内容"
-      height="35"
+      height="34"
       :showAction="false"
+      @focus="goSearch"
     />
   </view>
 
@@ -94,6 +96,11 @@ const discussList = [
 function goChat() {
   uni.navigateTo({
     url: "/pages/chat/chat",
+  });
+}
+function goSearch() {
+  uni.navigateTo({
+    url: "/pages/search/search",
   });
 }
 

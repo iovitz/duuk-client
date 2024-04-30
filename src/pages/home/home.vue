@@ -1,7 +1,8 @@
 <template>
   <view class="page-container navbar tabbar">
-    <view class="header fixed-top">
-      <uv-search inputAlign="center" :showAction="false" />
+    <uv-status-bar />
+    <view class="header p-1 fixed-top">
+      <uv-search inputAlign="center" @focus="goSearch" :showAction="false" />
       <view class="header-right-icon" @click="goBookCategory">
         <i class="dicon dicon-knowledge" style="font-size: 50rpx"></i>
       </view>
@@ -90,6 +91,12 @@ async function loadBookList() {
   isLoading = false;
 }
 
+function goSearch() {
+  uni.navigateTo({
+    url: "/pages/search/search",
+  });
+}
+
 onLoad((options) => {
   loadBookList();
 });
@@ -97,12 +104,9 @@ onLoad((options) => {
 
 <style lang="scss" scoped>
 .header {
-  height: 88rpx;
   display: flex;
   align-items: center;
-  padding: 0 30rpx;
   background-color: #fff;
-  padding-top: var(--status-bar-height);
   .header-right-icon {
     height: 60rpx;
     width: 60rpx;

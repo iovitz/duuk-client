@@ -7,6 +7,12 @@
   },
   "pages": [
     {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "Duuk图书"
+      }
+    },
+    {
       "path": "pages/search/search",
       "style": {
         "navigationBarTitleText": "Duuk图书"
@@ -14,12 +20,6 @@
     },
     {
       "path": "pages/square/square",
-      "style": {
-        "navigationBarTitleText": "Duuk图书"
-      }
-    },
-    {
-      "path": "pages/home/home",
       "style": {
         "navigationBarTitleText": "Duuk图书"
       }

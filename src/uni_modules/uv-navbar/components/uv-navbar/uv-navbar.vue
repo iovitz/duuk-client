@@ -205,7 +205,7 @@
 
 			&__left,
 			&__right {
-				padding: 0 13px;
+				padding: 0 15px;
 				position: absolute;
 				top: 0;
 				bottom: 0;
