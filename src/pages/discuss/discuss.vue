@@ -4,19 +4,10 @@
       <text class="dicon dicon-user-group"></text>
     </template>
     <template #right>
+      <text class="dicon dicon-search mr-2" @tap="handleGoSearch"></text>
       <text class="dicon dicon-menu" @tap="handleOpenPopup"></text>
-      <text class="dicon dicon-search" @tap="handleOpenPopup"></text>
     </template>
   </uv-navbar>
-  <view class="search-container">
-    <uv-search
-      inputAlign="center"
-      placeholder="讨论内容"
-      height="34"
-      :showAction="false"
-      @focus="goSearch"
-    />
-  </view>
 
   <uv-action-sheet
     ref="actionSheetRef"
@@ -98,7 +89,7 @@ function goChat() {
     url: "/pages/chat/chat",
   });
 }
-function goSearch() {
+function handleGoSearch() {
   uni.navigateTo({
     url: "/pages/search/search",
   });
@@ -114,9 +105,4 @@ function actionSheetSelect(e) {
 }
 </script>
 
-<style lang="scss" scoped>
-.search-container {
-  padding: 10rpx;
-  background-color: #fff;
-}
-</style>
+<style lang="scss" scoped></style>

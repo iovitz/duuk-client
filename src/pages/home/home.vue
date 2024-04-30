@@ -1,39 +1,37 @@
 <template>
-  <view class="page-container navbar tabbar">
+  <view class="page-container tabbar">
     <uv-status-bar />
-    <view class="header p-1 fixed-top">
+    <view class="header p-1">
       <uv-search inputAlign="center" @focus="goSearch" :showAction="false" />
       <view class="header-right-icon" @click="goBookCategory">
         <i class="dicon dicon-knowledge" style="font-size: 50rpx"></i>
       </view>
     </view>
-    <view class="page">
-      <scroll-view
-        :scroll-y="true"
-        :style="`height: ${scrollHeight}px`"
-        @scrolltolower="loadBookList"
-      >
-        <uv-modal ref="modal" title="标题">
-          <view class="slot-content"> h1h1 </view>
-        </uv-modal>
-        <home-swiper />
-        <Heading title="书籍类别" moreText="查看更多" />
-        <uv-sticky :offsetTop="stickyHeight" :customNavHeight="statusBarHeight">
-          <HomeBookType />
-        </uv-sticky>
-        <Heading title="热销书籍" moreText="查看更多" />
-        <!-- LoadMore -->
-        <BookList ref="bookListRef" />
-        <uv-load-more
-          status="loading"
-          :customStyle="{
-            margin: 0,
-            padding: '10px 0',
-          }"
-        />
-      </scroll-view>
-      <TabBar path="/pages/home/home" />
-    </view>
+    <scroll-view
+      :scroll-y="true"
+      :style="`height: ${scrollHeight}px`"
+      @scrolltolower="loadBookList"
+    >
+      <uv-modal ref="modal" title="标题">
+        <view class="slot-content"> h1h1 </view>
+      </uv-modal>
+      <home-swiper />
+      <Heading title="书籍类别" moreText="查看更多" />
+      <uv-sticky :offsetTop="stickyHeight" :customNavHeight="statusBarHeight">
+        <HomeBookType />
+      </uv-sticky>
+      <Heading title="热销书籍" moreText="查看更多" />
+      <!-- LoadMore -->
+      <BookList ref="bookListRef" />
+      <uv-load-more
+        status="loading"
+        :customStyle="{
+          margin: 0,
+          padding: '10px 0',
+        }"
+      />
+    </scroll-view>
+    <TabBar path="/pages/home/home" />
   </view>
 </template>
 
