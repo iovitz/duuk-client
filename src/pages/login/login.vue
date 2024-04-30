@@ -56,7 +56,7 @@
       <view class="auth-button wx" @click="handleWXLogin">
         <uv-icon
           name="wechat-fill"
-          custom-prefix="duuk-icon"
+          custom-prefix="dicon"
           size="30"
           color="#fff"
         />
