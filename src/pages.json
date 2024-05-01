@@ -7,15 +7,15 @@
   },
   "pages": [
     {
-      "path": "contact",
-      "style": {
-        "navigationBarTitleText": "好友列表"
-      }
-    },
-    {
       "path": "home",
       "style": {
         "navigationBarTitleText": "Duuk图书"
+      }
+    },
+    {
+      "path": "contact",
+      "style": {
+        "navigationBarTitleText": "好友列表"
       }
     },
     {
@@ -110,7 +110,7 @@
     "current": 0, //当前激活的模式(list 的索引项)
     "list": [
       {
-        "path": "/home/home" //启动页面，必选
+        "path": "/contact" //启动页面，必选
       }
     ]
   }
