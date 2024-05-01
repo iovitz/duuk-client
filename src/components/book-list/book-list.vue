@@ -13,6 +13,7 @@
         :poster="item.poster"
         :w="item.w"
         :h="item.h"
+        @click="handleGoBook"
       />
     </view>
     <view
@@ -28,6 +29,7 @@
         :poster="item.poster"
         :w="item.w"
         :h="item.h"
+        @click="handleGoBook"
       />
     </view>
   </view>
@@ -45,13 +47,11 @@ const list2 = reactive([]);
 const list1Height = ref(0);
 const list2Height = ref(0);
 
-const containerHeight = computed(() => {
-  const height =
-    list1Height.value > list2Height.value
-      ? list1Height.value
-      : list2Height.value;
-  return height + "px";
-});
+const handleGoBook = () => {
+  uni.navigateTo({
+    url: "book",
+  });
+};
 
 defineExpose({
   addToList(books) {

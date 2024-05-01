@@ -110,7 +110,7 @@
     "current": 0, //当前激活的模式(list 的索引项)
     "list": [
       {
-        "path": "/contact" //启动页面，必选
+        "path": "home" //启动页面，必选
       }
     ]
   }

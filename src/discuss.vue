@@ -1,7 +1,7 @@
 <template>
   <uv-navbar title="聊天列表" :placeholder="true">
     <template #left>
-      <text class="dicon dicon-user-group"></text>
+      <text class="dicon dicon-user-group" @tap="handleGoContact"></text>
     </template>
     <template #right>
       <text class="dicon dicon-search mr-2" @tap="handleGoSearch"></text>
@@ -102,6 +102,12 @@ function handleOpenPopup() {
 
 function actionSheetSelect(e) {
   logger.debug("Popup Change", e);
+}
+
+function handleGoContact(e) {
+  uni.navigateTo({
+    url: "contact",
+  });
 }
 </script>
 

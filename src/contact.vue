@@ -1,6 +1,6 @@
 <template>
   <view class="page-container">
-    <uv-navbar title="联系人列表" :placeholder="true">
+    <uv-navbar title="联系人列表" autoBack :placeholder="true">
       <template #right>
         <text class="dicon dicon-search mr-2" @tap="handleGoSearch"></text>
         <text class="dicon dicon-add"></text>
@@ -12,14 +12,12 @@
           <uv-list-item
             title="好友申请"
             thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
-            thumb-size="lg"
             :clickable="true"
           >
           </uv-list-item>
           <uv-list-item
             title="群聊"
             thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
-            thumb-size="lg"
             :clickable="true"
           >
           </uv-list-item>
@@ -32,10 +30,7 @@
             <uv-list-item
               v-for="(cell, index) in item"
               :title="cell"
-              note="列表描述信息"
               thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
-              thumb-size="lg"
-              rightText="右侧文字"
               :clickable="true"
             >
             </uv-list-item>

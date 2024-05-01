@@ -1,12 +1,12 @@
 <template>
   <view class="page-container tabbar navbar">
-    <uv-navbar title="书籍详情" :autoBack="true">
+    <uv-navbar title="书籍详情" autoBack>
       <template #right>
         <text class="dicon dicon-asterism"></text>
         <text class="dicon dicon-asterism"></text>
       </template>
     </uv-navbar>
-    <view class="page">aefawefwe </view>
+    <view class="page">Book </view>
   </view>
   <view class="order-options fixed-bottom container">
     <view class="book-channel flex flex-column align-center">

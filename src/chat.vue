@@ -1,6 +1,6 @@
 <template>
   <view class="chat-page-container">
-    <uv-navbar title="雾凇的雾" :placeholder="true" :autoBack="true">
+    <uv-navbar title="雾凇的雾" :placeholder="true" autoBack>
       <template #right>
         <text class="dicon dicon-user"></text>
       </template>
