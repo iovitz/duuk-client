@@ -1,9 +1,6 @@
 <template>
   <view class="page-container">
     <uv-navbar title="联系人列表" :placeholder="true">
-      <template #left>
-        <text class="dicon dicon-user-group"></text>
-      </template>
       <template #right>
         <text class="dicon dicon-search mr-2" @tap="handleGoSearch"></text>
         <text class="dicon dicon-add"></text>
@@ -11,18 +8,26 @@
     </uv-navbar>
     <uv-index-list :index-list="indexList" customNavHeight="100rpx">
       <template v-slot:header>
-        <view style="height: 100rpx; width: 750rpx; background-color: #3c9cff">
-          头部内容
-        </view>
+        <uv-list>
+          <uv-list-item
+            title="好友申请"
+            thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
+            thumb-size="lg"
+            :clickable="true"
+          >
+          </uv-list-item>
+          <uv-list-item
+            title="群聊"
+            thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
+            thumb-size="lg"
+            :clickable="true"
+          >
+          </uv-list-item>
+        </uv-list>
       </template>
       <template v-for="(item, index) in itemArr">
-        <!-- #ifdef APP-NVUE -->
-        <uv-index-anchor :text="indexList[index]"></uv-index-anchor>
-        <!-- #endif -->
         <uv-index-item>
-          <!-- #ifndef APP-NVUE -->
           <uv-index-anchor :text="indexList[index]"></uv-index-anchor>
-          <!-- #endif -->
           <uv-list>
             <uv-list-item
               v-for="(cell, index) in item"
