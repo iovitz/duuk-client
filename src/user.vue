@@ -1,12 +1,12 @@
 <template>
   <uv-navbar title="个人中心" :placeholder="true" :autoBack="true" left-icon="">
     <template #right>
-      <text class="dicon dicon-asterism"></text>
+      <text class="dicon dicon-asterism" @click="goInfo"></text>
     </template>
   </uv-navbar>
   <scroll-view :scroll-y="true" :style="`height: ${scrollHeight}px`">
     <uv-gap height="20rpx" bgColor="#f6f7f8"> </uv-gap>
-    <view class="card flex">
+    <view class="card flex" @click="goInfo">
       <uv-avatar
         size="90rpx"
         src="https://via.placeholder.com/200x200.png/2878ff"
@@ -15,7 +15,7 @@
       ></uv-avatar>
       <view>
         <text class="h3 uv-line-1"> 雾凇的雾 </text>
-        <text class="font-sm uv-line-1 mt-1"> 杜克号：fea251251251 </text>
+        <text class="font-sm uv-line-1"> 杜克号：fea251251251 </text>
       </view>
     </view>
     <uv-gap height="20rpx" bgColor="#f6f7f8"> </uv-gap>
@@ -62,6 +62,7 @@
         title="个人设置"
         clickable
         :border="false"
+        @click="goInfo"
       ></uv-cell>
       <uv-cell
         icon="setting-fill"
@@ -93,6 +94,12 @@ import { useScrollHeight } from "@/hooks/scroll-height";
 import { logger } from "@/utils/logger";
 
 const { scrollHeight } = useScrollHeight(44 + 50);
+
+function goInfo(e) {
+  uni.navigateTo({
+    url: "info",
+  });
+}
 </script>
 
 <style lang="scss" scoped>

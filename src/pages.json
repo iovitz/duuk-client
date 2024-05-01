@@ -19,6 +19,12 @@
       }
     },
     {
+      "path": "info",
+      "style": {
+        "navigationBarTitleText": "个人信息"
+      }
+    },
+    {
       "path": "search",
       "style": {
         "navigationBarTitleText": "Duuk图书"
@@ -110,7 +116,7 @@
     "current": 0, //当前激活的模式(list 的索引项)
     "list": [
       {
-        "path": "home" //启动页面，必选
+        "path": "info" //启动页面，必选
       }
     ]
   }
