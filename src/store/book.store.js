@@ -1,3 +1,4 @@
+import { io } from "@/utils/io/io";
 import { defineStore } from "pinia";
 
 /**
@@ -10,12 +11,13 @@ export const useBookStore = defineStore("book", {
 	},
 	state: () => {
 		return {
-			bookList: [],
+			category: [],
 		};
 	},
 	actions: {
-		add(item) {
-			this.bookList.push(item);
+		async fetchCategory(item) {
+			const res = await io.request("get", "/book/category");
+			this.category = res;
 		},
 	},
 });
