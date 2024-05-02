@@ -14,8 +14,8 @@
         shape="square"
       ></uv-avatar>
       <view>
-        <text class="h3 uv-line-1"> 雾凇的雾 </text>
-        <text class="font-sm uv-line-1"> 杜克号：fea251251251 </text>
+        <text class="h3 uv-line-1"> {{ userStore.nickname }} </text>
+        <text class="font-sm uv-line-1"> 杜克号：{{ userStore.uname }} </text>
       </view>
     </view>
     <uv-gap height="20rpx" bgColor="#f6f7f8"> </uv-gap>
@@ -82,6 +82,7 @@
         title="退出登录"
         clickable
         :border="false"
+        @click="logout"
       ></uv-cell>
     </uv-cell-group>
   </scroll-view>
@@ -92,12 +93,22 @@
 import TabBar from "@/components/tabbar/tabbar.vue";
 import { useScrollHeight } from "@/hooks/scroll-height";
 import { logger } from "@/utils/logger";
+import { useUserStore } from "./store";
+
+const userStore = useUserStore();
 
 const { scrollHeight } = useScrollHeight(44 + 50);
 
 function goInfo(e) {
   uni.navigateTo({
     url: "info",
+  });
+}
+
+function logout() {
+  userStore.logout();
+  uni.navigateTo({
+    url: "login",
   });
 }
 </script>

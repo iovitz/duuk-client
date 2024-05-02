@@ -5,6 +5,12 @@
       "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
     }
   },
+  "insetLoader": {
+    "config": {
+      "toast": "<uv-toast ref='toastRef' />"
+    },
+    "label": ["toast"]
+  },
   "pages": [
     {
       "path": "home",

@@ -8,23 +8,46 @@ import { defineStore } from "pinia";
 export const useUserStore = defineStore("user", {
 	persist: {
 		key: "user",
-		paths: [],
+		paths: ["account", "nickname", "uid", "uname", "isLogin"],
 	},
 	state: () => {
 		return {
-			logdin: false,
+			account: "",
+			nickname: "",
+			uid: "",
+			uname: "",
 		};
 	},
 	actions: {
 		async register(payload) {
-			const regRes = await io.post("/user/register", {
+			const res = await io.post("/user/register", {
 				uname: payload.username,
 				pwd: payload.password,
 				vcode: payload.code,
 			});
-			storage.set("token", regRes.token);
-			// this.$dispose();
-			return regRes.user;
+			this.handleLoginSuccess(res);
+			return res.user;
+		},
+		async login(payload) {
+			const res = await io.post("/user/login", {
+				uname: payload.username,
+				pwd: payload.password,
+				vcode: payload.code,
+			});
+			this.handleLoginSuccess(res);
+			return res.user;
+		},
+		handleLoginSuccess(res) {
+			storage.set("token", res.token);
+			this.nickname = res.user.nickname;
+			this.uid = res.user.uid;
+			this.uname = res.user.uname;
+		},
+		logout() {
+			storage.remove("token");
+			this.nickname = "";
+			this.uid = "";
+			this.uname = "";
 		},
 	},
 });

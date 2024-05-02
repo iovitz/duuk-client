@@ -124,14 +124,7 @@ function handleSubmit() {
         },
       });
     })
-    .catch((errors) => {
-      toastRef.value.show({
-        type: "error",
-        message: "注册失败",
-        position: "bottom",
-      });
-      logger.error("表单校验失败", errors);
-    });
+    .catch(reflashVerifyCode);
 }
 </script>
 

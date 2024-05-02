@@ -6,8 +6,9 @@
       <uv-form
         labelPosition="left"
         :model="formData"
-        ref="form"
-        labelWidth="6em"
+        labelWidth="80px"
+        ref="formRef"
+        :rules="rules"
       >
         <uv-form-item prop="username" label="用户名：">
           <uv-input
@@ -41,7 +42,11 @@
             v-html="verifyCode"
           ></view>
         </uv-form-item>
-        <uv-button type="primary" customStyle="margin-top: 10px">
+        <uv-button
+          type="primary"
+          @click="handleSubmit"
+          customStyle="margin-top: 10px"
+        >
           登录
         </uv-button>
         <view class="options">
@@ -72,12 +77,25 @@
 import { onMounted, ref } from "vue";
 import { logger } from "@/utils/logger";
 import { useVerifyCode } from "@/hooks/verify-code";
+import { passwordRule, usernameRule, verifyCodeRule } from "./utils/rules";
+import { useUserStore } from "./store";
 
-const formData = {
+const rules = {
+  username: usernameRule,
+  password: passwordRule,
+  code: verifyCodeRule,
+};
+
+const userStore = useUserStore();
+
+const formData = ref({
   username: "",
   password: "",
   code: "",
-};
+});
+
+const formRef = ref(null);
+const toastRef = ref(null);
 
 const { verifyCode, reflashVerifyCode } = useVerifyCode(
   "#login-verify-code",
@@ -85,6 +103,26 @@ const { verifyCode, reflashVerifyCode } = useVerifyCode(
   "login",
 );
 
+function handleSubmit() {
+  formRef.value
+    .validate()
+    .then(async (res) => {
+      logger.success("表单校验成功", res);
+      await userStore.login(formData.value);
+      toastRef.value.show({
+        type: "success",
+        message: "登录成功",
+        position: "bottom",
+        duration: 1000,
+        complete() {
+          uni.switchTab({
+            url: "home",
+          });
+        },
+      });
+    })
+    .catch(reflashVerifyCode);
+}
 function handleWXLogin() {
   logger.debug("登录WX");
 }

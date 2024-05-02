@@ -4,6 +4,7 @@ import { logger } from "../logger";
 import { getConfig } from "../config";
 import pako from "@/utils/common/pako.js";
 import { Buffer } from "buffer";
+import { getCurrentInstance } from "vue";
 
 export class IO {
 	isWatching = true;
@@ -132,6 +133,20 @@ export class IO {
 			})
 			.catch((e) => {
 				logger.error("请求出错", e);
+				switch (e.code) {
+					case 40022:
+						uni.showToast({
+							title: e.message,
+							icon: "error",
+						});
+						break;
+					default:
+						uni.showToast({
+							title: e.message,
+							icon: "error",
+						});
+				}
+				return Promise.reject(e);
 			});
 	}
 
@@ -156,7 +171,12 @@ export class IO {
 	}
 }
 
+// #ifdef H5
+let baseURL = getConfig("VITE_BASE_URL_H5");
+// #endif
+// #ifndef H5
 let baseURL = getConfig("VITE_BASE_URL");
+// #endif
 
 export const io = new IO(
 	{
