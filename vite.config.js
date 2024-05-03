@@ -1,11 +1,10 @@
 import { defineConfig } from "vite";
-import vue3InsetLoaderPlugin from "./plugins/vue3-inset-loader";
 import uni from "@dcloudio/vite-plugin-uni";
 
 // https://vitejs.dev/config/
 export default {
 	...defineConfig({
-		plugins: [vue3InsetLoaderPlugin, uni()],
+		plugins: [uni()],
 	}),
 
 	css: {

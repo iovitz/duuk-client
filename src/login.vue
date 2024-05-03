@@ -1,6 +1,6 @@
-<!-- eslint-disable vue/no-v-text-v-html-on-component -->
 <template>
   <view class="login-page-container">
+    <uv-toast ref="toastRef" />
     <view class="form-container">
       <view class="logo"> DUUK图书 </view>
       <uv-form

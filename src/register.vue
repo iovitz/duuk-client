@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-v-text-v-html-on-component -->
 <template>
   <view class="register-page-container">
-    <uv-toast ref="toastRef"></uv-toast>
+    <uv-toast ref="toastRef" />
     <uv-navbar title="加入DUUK" :placeholder="true" autoBack></uv-navbar>
     <view class="form-container">
       <uv-form
