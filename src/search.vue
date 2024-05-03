@@ -2,14 +2,23 @@
   <view class="page-container">
     <uv-status-bar />
     <view class="p-2 bg-white">
-      <view class="flex">
-        <uv-icon class="pr-1" name="arrow-left" @click="goBack" :size="20" />
+      <view class="flex align-center">
         <uv-search
           height="34"
-          :showAction="true"
+          :showAction="false"
+          v-model="searchInput"
           :focus="true"
-          actionText="搜索"
         ></uv-search>
+        <view
+          v-if="searchInput.length > 0"
+          class="action pl-2 font"
+          @click="handleSearch"
+        >
+          搜索
+        </view>
+        <view v-if="!searchInput" class="action pl-2 font" @click="goBack">
+          取消
+        </view>
       </view>
       <uv-tabs
         :list="tabList"
@@ -26,7 +35,7 @@
       :scroll-with-animation="true"
       :show-scrollbar="false"
     >
-      <view>CONTENT</view>
+      {{ searchInput }}
       <view>CONTENT</view>
       <view>CONTENT</view>
       <view>CONTENT</view>
@@ -71,10 +80,11 @@
 <script setup>
 import { useScrollHeight } from "@/hooks/scroll-height";
 import { logger } from "@/utils/logger";
-import { ref } from "@vue/runtime-core";
+import { ref } from "vue";
 
 const { scrollHeight } = useScrollHeight(34 + 2 + 44 + 20);
 
+const searchInput = ref("");
 const tabList = ref([
   {
     name: "综合",
@@ -98,6 +108,9 @@ const handleTabClick = (e) => {
 const goBack = () => {
   uni.navigateBack();
 };
+function handleSearch() {
+  logger.debug("搜索内容", searchInput.value);
+}
 </script>
 
 <style lang="scss" scoped></style>

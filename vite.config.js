@@ -19,7 +19,7 @@ export default {
 		proxy: {
 			"/api": {
 				// target: "http://<server host>[:port]/", // 远程服务器
-				target: "http://192.168.1.102:9293", // 本地开发
+				target: "http://47.106.93.100:9292/", // 本地开发
 				changeOrigin: true,
 			},
 		},
