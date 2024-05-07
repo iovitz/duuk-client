@@ -14,6 +14,7 @@ export const useUserStore = defineStore("user", {
 		return {
 			account: "",
 			nickname: "",
+			avatar: "",
 			uid: "",
 			uname: "",
 		};
@@ -42,12 +43,14 @@ export const useUserStore = defineStore("user", {
 			this.nickname = res.user.nickname;
 			this.uid = res.user.uid;
 			this.uname = res.user.uname;
+			this.avatar = res.user.avatar;
 		},
 		logout() {
 			storage.remove("token");
 			this.nickname = "";
 			this.uid = "";
 			this.uname = "";
+			this.avatar = "";
 		},
 	},
 });

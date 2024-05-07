@@ -9,7 +9,9 @@
     <view class="card flex" @click="goInfo">
       <uv-avatar
         size="90rpx"
-        src="https://via.placeholder.com/200x200.png/2878ff"
+        :src="
+          userStore.avatar ?? 'https://via.placeholder.com/200x200.png/2878ff'
+        "
         class="mr-2"
         shape="square"
       ></uv-avatar>
