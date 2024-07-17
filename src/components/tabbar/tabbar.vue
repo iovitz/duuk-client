@@ -14,7 +14,7 @@
         <text class="icon dicon dicon-home"></text>
       </template>
     </uv-tabbar-item>
-    <uv-tabbar-item text="广场" name="square">
+    <uv-tabbar-item text="点唱" name="sing">
       <template #active-icon>
         <text class="icon active dicon dicon-aperture"></text>
       </template>

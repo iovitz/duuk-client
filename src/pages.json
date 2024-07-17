@@ -37,7 +37,7 @@
       }
     },
     {
-      "path": "square",
+      "path": "sing",
       "style": {
         "navigationBarTitleText": "DuuK"
       }
@@ -82,7 +82,7 @@
         "pagePath": "home"
       },
       {
-        "pagePath": "square"
+        "pagePath": "sing"
       },
       {
         "pagePath": "discuss"

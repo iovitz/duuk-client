@@ -1,11 +1,11 @@
 <template>
   <view class="page-container tabbar">
-    <uv-navbar title="Duuk大厅" left-icon="">
+    <uv-navbar title="点唱" left-icon="">
       <template #right>
         <text class="dicon dicon-edit-text"></text>
       </template>
     </uv-navbar>
-    <TabBar path="square" />
+    <TabBar path="sing" />
   </view>
 </template>
 
