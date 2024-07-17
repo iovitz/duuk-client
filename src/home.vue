@@ -2,10 +2,7 @@
   <view class="page-container tabbar">
     <uv-status-bar />
     <view class="header p-1">
-      <uv-search inputAlign="center" @focus="goSearch" :showAction="false" />
-      <view class="header-right-icon" @click="goBookCategory">
-        <i class="dicon dicon-knowledge" style="font-size: 50rpx"></i>
-      </view>
+      <uv-search inputAlign="center" @click="goSearch" disabled :showAction="false" />
     </view>
     <scroll-view
       :scroll-y="true"
@@ -16,20 +13,6 @@
         <view class="slot-content"> h1h1 </view>
       </uv-modal>
       <home-swiper />
-      <Heading title="书籍类别" moreText="查看更多" />
-      <uv-sticky :offsetTop="stickyHeight" :customNavHeight="statusBarHeight">
-        <HomeBookType />
-      </uv-sticky>
-      <Heading title="热销书籍" moreText="查看更多" />
-      <!-- LoadMore -->
-      <BookList ref="bookListRef" />
-      <uv-load-more
-        status="loading"
-        :customStyle="{
-          margin: 0,
-          padding: '10px 0',
-        }"
-      />
     </scroll-view>
     <TabBar path="home" />
   </view>
@@ -40,8 +23,6 @@ import { ref } from "vue";
 import TabBar from "@/components/tabbar/tabbar.vue";
 import HomeSwiper from "@/components/home-swiper/home-swiper.vue";
 import Heading from "@/components/heading/heading.vue";
-import HomeBookType from "@/components/home-book-type/home-book-type.vue";
-import BookList from "@/components/book-list/book-list.vue";
 import { useScrollHeight } from "@/hooks/scroll-height";
 import { useStickyHeight } from "@/hooks/sticky-height";
 import { logger } from "@/utils/logger";
