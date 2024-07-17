@@ -1,7 +1,6 @@
 module.exports = {
 	env: {
 		browser: true,
-		es2024: true,
 		node: true,
 	},
 	root: true,

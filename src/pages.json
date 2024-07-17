@@ -47,6 +47,10 @@
       "style": {}
     },
     {
+      "path": "upload",
+      "style": {}
+    },
+    {
       "path": "login",
       "style": {}
     },

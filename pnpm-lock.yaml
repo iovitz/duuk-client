@@ -77,6 +77,9 @@ dependencies:
   pinia-plugin-persistedstate:
     specifier: 3.2.0
     version: 3.2.0(pinia@2.0.36)
+  randomcolor:
+    specifier: ^0.6.2
+    version: 0.6.2
   vue:
     specifier: 3.3.11
     version: 3.3.11
@@ -5689,7 +5692,7 @@ packages:
     dev: true
 
   /is-arrayish@0.2.1:
-    resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
+    resolution: {integrity: sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=}
     dev: true
 
   /is-bigint@1.0.4:
@@ -7250,6 +7253,10 @@ packages:
     dependencies:
       safe-buffer: 5.2.1
     dev: true
+
+  /randomcolor@0.6.2:
+    resolution: {integrity: sha512-Mn6TbyYpFgwFuQ8KJKqf3bqqY9O1y37/0jgSK/61PUxV4QfIMv0+K2ioq8DfOjkBslcjwSzRfIDEXfzA9aCx7A==}
+    dev: false
 
   /range-parser@1.2.1:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
