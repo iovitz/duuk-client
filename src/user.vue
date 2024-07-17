@@ -48,12 +48,6 @@
             <text class="order-menu-text">待收货</text>
           </view>
         </uv-col>
-        <uv-col span="2">
-          <view class="order-menu-item">
-            <text class="editor-icon dicon dicon-talk-control" />
-            <text class="order-menu-text">退款/售后</text>
-          </view>
-        </uv-col>
       </uv-row>
     </view>
     <uv-gap height="20rpx" bgColor="#f6f7f8"></uv-gap>

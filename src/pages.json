@@ -15,7 +15,7 @@
     {
       "path": "home",
       "style": {
-        "navigationBarTitleText": "Duuk图书"
+        "navigationBarTitleText": "DuuK"
       }
     },
     {
@@ -33,27 +33,17 @@
     {
       "path": "search",
       "style": {
-        "navigationBarTitleText": "Duuk图书"
+        "navigationBarTitleText": "DuuK"
       }
     },
     {
       "path": "square",
       "style": {
-        "navigationBarTitleText": "Duuk图书"
-      }
-    },
-    {
-      "path": "book",
-      "style": {
-        "navigationBarTitleText": "图书详情"
+        "navigationBarTitleText": "DuuK"
       }
     },
     {
       "path": "chat",
-      "style": {}
-    },
-    {
-      "path": "category",
       "style": {}
     },
     {
@@ -70,12 +60,6 @@
       "path": "reset",
       "style": {
         "navigationBarTitleText": "重置密码"
-      }
-    },
-    {
-      "path": "shoppingcard",
-      "style": {
-        "navigationBarTitleText": "购物车"
       }
     },
     {

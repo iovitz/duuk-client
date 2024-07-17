@@ -2,7 +2,7 @@
   <view class="login-page-container">
     <uv-toast ref="toastRef" />
     <view class="form-container">
-      <view class="logo"> DUUK图书 </view>
+      <view class="logo"> 进入DOOK </view>
       <uv-form
         labelPosition="left"
         :model="formData"
