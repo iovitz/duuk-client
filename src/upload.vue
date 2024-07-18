@@ -7,7 +7,17 @@
   >
   </view>
   <view class="page-container upload-page">
-    <uv-status-bar />
+    <uv-navbar
+      bgColor="#00000000"
+      title="上传歌词"
+      left-icon=""
+      placeholder="true"
+      :titleStyle="{ color: '#fff' }"
+    >
+      <template #left>
+        <text class="dicon dicon-edit-text text-white"></text>
+      </template>
+    </uv-navbar>
     <uv-input
       placeholder="歌曲名称"
       border="none"

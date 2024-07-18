@@ -3,7 +3,7 @@
     <uv-navbar title="联系人列表" autoBack :placeholder="true">
       <template #right>
         <text class="dicon dicon-search mr-2" @tap="handleGoSearch"></text>
-        <text class="dicon dicon-add"></text>
+        <text class="dicon dicon-tianjiahaoyou"></text>
       </template>
     </uv-navbar>
     <uv-index-list :index-list="indexList" customNavHeight="100rpx">

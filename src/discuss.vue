@@ -1,11 +1,10 @@
 <template>
   <uv-navbar title="聊天列表" :placeholder="true">
     <template #left>
-      <text class="dicon dicon-user-group" @tap="handleGoContact"></text>
+      <text class="dicon dicon-tuandui" @tap="handleGoContact"></text>
     </template>
     <template #right>
-      <text class="dicon dicon-search mr-2" @tap="handleGoSearch"></text>
-      <text class="dicon dicon-menu" @tap="handleOpenPopup"></text>
+      <text class="dicon dicon-gengduo1" @tap="handleOpenPopup"></text>
     </template>
   </uv-navbar>
 
@@ -87,11 +86,6 @@ const discussList = [
 function goChat() {
   uni.navigateTo({
     url: "chat",
-  });
-}
-function handleGoSearch() {
-  uni.navigateTo({
-    url: "search",
   });
 }
 

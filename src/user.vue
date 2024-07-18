@@ -22,34 +22,6 @@
     </view>
     <uv-gap height="20rpx" bgColor="#f6f7f8"> </uv-gap>
 
-    <view class="card order-menu">
-      <uv-row justify="space-between">
-        <uv-col span="2">
-          <view class="order-menu-item">
-            <text class="editor-icon dicon dicon-truck"></text>
-            <text class="order-menu-text">购物车</text>
-          </view>
-        </uv-col>
-        <uv-col span="2">
-          <view class="order-menu-item">
-            <text class="editor-icon dicon dicon-card"></text>
-            <text class="order-menu-text">待付款</text>
-          </view>
-        </uv-col>
-        <uv-col span="2">
-          <view class="order-menu-item">
-            <text class="editor-icon dicon dicon-packingbag"></text>
-            <text class="order-menu-text">待发货</text>
-          </view>
-        </uv-col>
-        <uv-col span="2">
-          <view class="order-menu-item">
-            <text class="editor-icon dicon dicon-truck"></text>
-            <text class="order-menu-text">待收货</text>
-          </view>
-        </uv-col>
-      </uv-row>
-    </view>
     <uv-gap height="20rpx" bgColor="#f6f7f8"></uv-gap>
 
     <uv-cell-group class="option-menu" :border="false">

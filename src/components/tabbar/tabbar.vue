@@ -5,37 +5,38 @@
     @change="switchTab"
     :placeholder="false"
     activeColor="#EC716E"
+    :border="false"
   >
     <uv-tabbar-item text="首页" name="home">
       <template #active-icon>
-        <text class="icon active dicon dicon-home"></text>
+        <image class="icon active" src="/static/tabbar/home.svg" />
       </template>
       <template #inactive-icon>
-        <text class="icon dicon dicon-home"></text>
+        <image class="icon" src="/static/tabbar/home.svg" />
       </template>
     </uv-tabbar-item>
     <uv-tabbar-item text="点唱" name="sing">
       <template #active-icon>
-        <text class="icon active dicon dicon-aperture"></text>
+        <image class="icon active" src="/static/tabbar/music.svg" />
       </template>
       <template #inactive-icon>
-        <text class="icon dicon dicon-aperture"></text>
+        <image class="icon" src="/static/tabbar/music.svg" />
       </template>
     </uv-tabbar-item>
     <uv-tabbar-item text="聊天" name="discuss">
       <template #active-icon>
-        <text class="icon active dicon dicon-talk-reduce"></text>
+        <image class="icon active" src="/static/tabbar/message.svg" />
       </template>
       <template #inactive-icon>
-        <text class="icon dicon dicon-talk-reduce"></text>
+        <image class="icon" src="/static/tabbar/message.svg" />
       </template>
     </uv-tabbar-item>
     <uv-tabbar-item text="我的" name="user">
       <template #active-icon>
-        <text class="icon active dicon dicon-user"></text>
+        <image class="icon active" src="/static/tabbar/mine.svg" />
       </template>
       <template #inactive-icon>
-        <text class="icon dicon dicon-user"></text>
+        <image class="icon" src="/static/tabbar/mine.svg" />
       </template>
     </uv-tabbar-item>
   </uv-tabbar>
@@ -60,9 +61,12 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .icon {
-  font-size: 44rpx;
+  height: 50rpx;
+  width: 50rpx;
+  filter: grayscale(100%);
   &.active {
     color: #ec716e;
+    filter: grayscale(0%);
   }
 }
 </style>
