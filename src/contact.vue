@@ -23,7 +23,7 @@
           </uv-list-item>
         </uv-list>
       </template>
-      <template v-for="(item, index) in itemArr">
+      <template v-for="(item, index) in itemArr" :key="index">
         <uv-index-item>
           <uv-index-anchor :text="indexList[index]"></uv-index-anchor>
           <uv-list>
@@ -32,6 +32,7 @@
               :title="cell"
               thumb="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
               :clickable="true"
+              :key="index"
             >
             </uv-list-item>
           </uv-list>
