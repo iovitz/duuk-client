@@ -6,50 +6,56 @@
     }"
   >
   </view>
-  <view class="page-container upload-page">
+  <view class="page-container upload-page navbar">
     <uv-navbar
       bgColor="#00000000"
       title="上传歌词"
-      left-icon=""
-      placeholder="true"
+      :autoBack="true"
+      leftIconColor="#fff"
       :titleStyle="{ color: '#fff' }"
     >
-      <template #left>
-        <text class="dicon dicon-edit-text text-white"></text>
-      </template>
     </uv-navbar>
-    <uv-input
-      placeholder="歌曲名称"
-      border="none"
-      size="large"
-      class="song-title"
-      color="#ffffff"
-      fontSize="40rpx"
-      :customStyle="{
-        textAlign: 'center',
-      }"
-    ></uv-input>
+    <view class="upload-container">
+      <view class="mb-2">
+        <uv-input
+          placeholder="歌曲名称"
+          border="none"
+          size="large"
+          class="song-title"
+          color="#ffffff"
+          fontSize="40rpx"
+          :customStyle="{
+            textAlign: 'center',
+          }"
+        ></uv-input>
+      </view>
 
-    <uv-textarea
-      class="song-words"
-      border="none"
-      placeholder="请输入歌词"
-      color="#ffffff"
-      height="500px"
-      :maxlength="5000"
-    ></uv-textarea>
-    <uv-button
-      type="primary"
-      class="upload-button"
-      text="上传"
-      shape="circle"
-    ></uv-button>
+      <view class="flex-1" id="words-inputer">
+        <uv-textarea
+          class="song-words"
+          border="none"
+          placeholder="请输入歌词"
+          color="#050202"
+          :height="containerSize.height + 'px'"
+          :maxlength="5000"
+        ></uv-textarea>
+      </view>
+      <uv-button
+        type="primary"
+        class="upload-button"
+        text="上传"
+        shape="circle"
+      ></uv-button>
+    </view>
   </view>
 </template>
 
 <script setup>
 import randomColor from "randomcolor";
 import { computed } from "vue";
+import { useElementSize } from "@/hooks/element-size";
+
+const containerSize = useElementSize("#words-inputer");
 
 const bgColorSet = randomColor({
   count: 3,
@@ -87,9 +93,16 @@ const bgColor = computed(
   right: 0;
   bottom: 0;
   z-index: 99;
-  padding: 50rpx;
   display: flex;
   flex-direction: column;
+  .upload-container {
+    padding: 50rpx;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
   .song-title {
     font-size: 0;
     :deep(.uv-input__content__prefix-icon) {
@@ -97,7 +110,6 @@ const bgColor = computed(
     }
   }
   .song-words {
-    margin-top: 40rpx;
     background: inherit;
     padding: 0;
     flex: 1;
