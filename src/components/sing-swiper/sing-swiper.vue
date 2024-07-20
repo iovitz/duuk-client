@@ -26,3 +26,5 @@ const list = reactive([
   },
 ]);
 </script>
+
+<style lang="scss" scoped></style>

@@ -1,14 +1,6 @@
 <template>
   <view class="page-container tabbar">
     <uv-status-bar />
-    <view class="header p-1">
-      <uv-search
-        inputAlign="center"
-        @click="goSearch"
-        disabled
-        :showAction="false"
-      />
-    </view>
     <scroll-view
       :scroll-y="true"
       :style="`height: ${scrollHeight}px`"
@@ -17,7 +9,6 @@
       <uv-modal ref="modal" title="标题">
         <view class="slot-content"> h1h1 </view>
       </uv-modal>
-      <home-swiper />
     </scroll-view>
     <TabBar path="home" />
   </view>
@@ -26,7 +17,6 @@
 <script setup>
 import { ref } from "vue";
 import TabBar from "@/components/tabbar/tabbar.vue";
-import HomeSwiper from "@/components/home-swiper/home-swiper.vue";
 import Heading from "@/components/heading/heading.vue";
 import { useScrollHeight } from "@/hooks/scroll-height";
 import { useStickyHeight } from "@/hooks/sticky-height";
