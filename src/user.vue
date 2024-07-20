@@ -28,27 +28,28 @@
       <uv-cell
         icon="setting-fill"
         title="个人设置"
-        clickable
+        :clickable="true"
         :border="false"
         @click="goInfo"
       ></uv-cell>
       <uv-cell
         icon="setting-fill"
         title="账号设置"
-        clickable
+        :clickable="true"
         :border="false"
       ></uv-cell>
       <uv-cell
         icon="integral-fill"
         title="更新日志"
         value="已是新版本"
-        clickable
+        :clickable="true"
         :border="false"
+        @click="goUpdate"
       ></uv-cell>
       <uv-cell
         icon="setting-fill"
         title="退出登录"
-        clickable
+        :clickable="true"
         :border="false"
         @click="logout"
       ></uv-cell>
@@ -70,6 +71,12 @@ const { scrollHeight } = useScrollHeight(44 + 50);
 function goInfo(e) {
   uni.navigateTo({
     url: "info",
+  });
+}
+
+function goUpdate() {
+  uni.navigateTo({
+    url: "update",
   });
 }
 

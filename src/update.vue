@@ -1,6 +1,6 @@
 <template>
   <view class="page-container navbar">
-    <uv-navbar title="更新记录"></uv-navbar>
+    <uv-navbar title="更新记录" :autoBack="true"></uv-navbar>
     <view class="commit-info">
       <uv-subsection
         :list="commitType"
