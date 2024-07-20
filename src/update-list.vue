@@ -2,6 +2,12 @@
   <view class="page-container navbar">
     <uv-navbar title="更新记录"></uv-navbar>
     <view class="commit-info">
+      <uv-subsection
+        :list="commitType"
+        :current="current"
+        @change="handleTypeChange"
+        activeColor="#ff7e7c"
+      ></uv-subsection>
       <uv-steps current="0" direction="column" :dot="true">
         <uv-steps-item v-for="item in commitList" :key="item.sha">
           <template v-slot:title>
@@ -48,21 +54,36 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, computed } from "vue";
 import { ref } from "vue";
 import { io } from "@/utils/io/io";
 
-const commitList = ref([]);
+const commitInfo = ref([[], []]);
+
+const commitType = ref(["客户端更新", "服务端更新"]);
+
+const current = ref(0);
+
+function handleTypeChange(type) {
+  current.value = type;
+  if (commitInfo.value[type].length === 0) {
+    fetchCommitList();
+  }
+}
+
+const commitList = computed(() => {
+  return commitInfo.value[current.value];
+});
 
 async function fetchCommitList() {
+  const list = commitInfo.value[current.value];
   const data = await io.request("get", "/github/commits", {
     owner: "iovitz",
-    repo: "duuk-client",
+    repo: current.value === 0 ? "duuk-client" : "duuk-server",
     per_page: 15,
-    page: commitList.value.length / 15 + 1,
+    page: list.length / 15 + 1,
   });
-  console.log(data);
-  commitList.value.push(...data);
+  list.push(...data);
 }
 
 onMounted(() => {
