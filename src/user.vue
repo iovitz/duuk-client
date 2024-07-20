@@ -5,7 +5,7 @@
     </template>
   </uv-navbar>
   <scroll-view :scroll-y="true" :style="`height: ${scrollHeight}px`">
-    <uv-gap height="20rpx" bgColor="#f6f7f8"> </uv-gap>
+    <uv-gap height="20rpx" bgColor="#ffffff"> </uv-gap>
     <view class="card flex" @click="goInfo">
       <uv-avatar
         size="90rpx"
@@ -20,9 +20,9 @@
         <text class="font-sm uv-line-1"> 杜克号：{{ userStore.uname }} </text>
       </view>
     </view>
-    <uv-gap height="20rpx" bgColor="#f6f7f8"> </uv-gap>
+    <uv-gap height="20rpx" bgColor="#ffffff"> </uv-gap>
 
-    <uv-gap height="20rpx" bgColor="#f6f7f8"></uv-gap>
+    <uv-gap height="20rpx" bgColor="#ffffff"></uv-gap>
 
     <uv-cell-group class="option-menu" :border="false">
       <uv-cell

@@ -2,7 +2,7 @@
   <view class="page-container">
     <uv-navbar title="个人信息" autoBack placeholder> </uv-navbar>
     <uv-list>
-      <uv-gap bgColor="#f6f7f8" height="10rpx"></uv-gap>
+      <uv-gap bgColor="#ffffff" height="10rpx"></uv-gap>
       <uv-list-item title="头像" showArrow clickable>
         <template #footer>
           <uv-avatar
@@ -26,7 +26,7 @@
         showArrow
         clickable
       />
-      <uv-gap bgColor="#f6f7f8" height="10rpx"></uv-gap>
+      <uv-gap bgColor="#ffffff" height="10rpx"></uv-gap>
       <uv-list-item title="收货地址" rightText="雾凇的雾" showArrow clickable />
     </uv-list>
   </view>

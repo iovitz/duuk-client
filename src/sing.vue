@@ -116,7 +116,6 @@ import TabBar from "@/components/tabbar/tabbar.vue";
 import { ref } from "vue";
 import SingSwiper from "@/components/sing-swiper/sing-swiper.vue";
 import { useScrollHeight } from "./hooks/scroll-height";
-
 const { scrollHeight } = useScrollHeight(50 + 35 + 15 + 10 + 130 + 44);
 
 const currentSwiperPageIndex = ref(0);
