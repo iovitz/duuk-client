@@ -9,7 +9,7 @@
         height="66rpx"
       >
       </uv-search>
-      <i class="dicon dicon-shangchuan upload-icon" @click="goUpload"></i>
+      <i class="dicon dicon-fabu upload-icon" @click="goUpload"></i>
     </view>
     <view class="swiper">
       <sing-swiper />
@@ -22,9 +22,7 @@
       @change="handleTabChange"
       :duration="200"
     >
-      <template #right>
-        <i class="dicon dicon-shangchuan"></i>
-      </template>
+      <template #right> <i class="dicon dicon-daoru"></i> 导入 </template>
     </uv-tabs>
 
     <swiper
