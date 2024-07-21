@@ -7,6 +7,7 @@
   >
   </view>
   <view class="page-container upload-page navbar">
+    <uv-toast ref="toastRef" />
     <uv-navbar
       bgColor="#00000000"
       title="上传歌词"
@@ -24,9 +25,11 @@
           class="song-title"
           color="#ffffff"
           fontSize="40rpx"
+          v-model="songName"
           :customStyle="{
             textAlign: 'center',
           }"
+          :disabled="isUploading"
         ></uv-input>
       </view>
 
@@ -38,6 +41,8 @@
           color="#050202"
           :height="containerSize.height + 'px'"
           :maxlength="5000"
+          v-model="songWords"
+          :disabled="isUploading"
         ></uv-textarea>
       </view>
       <uv-button
@@ -45,6 +50,8 @@
         class="upload-button"
         text="上传"
         shape="circle"
+        @click="handleUpload"
+        :disabled="isUploading"
       ></uv-button>
     </view>
   </view>
@@ -52,10 +59,43 @@
 
 <script setup>
 import randomColor from "randomcolor";
-import { computed } from "vue";
+import { computed, ref } from "vue";
+import { io } from "@/utils/io/io";
+import { logger } from "@/utils/logger";
 import { useElementSize } from "@/hooks/element-size";
 
+const songName = ref("");
+const songWords = ref("");
+const toastRef = ref(null);
+const isUploading = ref(false);
+
 const containerSize = useElementSize("#words-inputer");
+
+const handleUpload = async () => {
+  try {
+    isUploading.value = true;
+    const res = await io.request("post", "/song_words/upload", {
+      name: songName.value,
+      words: songWords.value,
+    });
+    toastRef.value.show({
+      type: "success",
+      message: "注册成功",
+      position: "bottom",
+      duration: 1000,
+      complete() {
+        uni.navigateBack();
+      },
+    });
+    logger.success("上传歌词成功", res);
+  } catch (e) {
+    logger.success("上传歌词失败", e);
+  } finally {
+    setTimeout(() => {
+      isUploading.value = false;
+    }, 1000);
+  }
+};
 
 const bgColorSet = randomColor({
   count: 3,
@@ -105,6 +145,7 @@ const bgColor = computed(
   }
   .song-title {
     font-size: 0;
+    background-color: #00000000 !important;
     :deep(.uv-input__content__prefix-icon) {
       margin-right: 0;
     }

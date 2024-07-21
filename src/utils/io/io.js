@@ -5,6 +5,7 @@ import { getConfig } from "../config";
 import pako from "@/utils/common/pako.js";
 import { Buffer } from "buffer";
 import { getCurrentInstance } from "vue";
+import { storage } from '../storage';
 
 export class IO {
 	isWatching = true;
@@ -98,6 +99,7 @@ export class IO {
 				header: {
 					...header,
 					...requestHeader,
+					Authorization: storage.get('token')
 				},
 			});
 		})

@@ -31,7 +31,7 @@ class Storage {
 	/**
 	 * 在storage中获取key对应的值
 	 * @param {string} key 需要获取的key
-	 * @return {T | null} 获取结果
+	 * @return 获取结果
 	 */
 	get(key) {
 		return uni.getStorageSync(key);
