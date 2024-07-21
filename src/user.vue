@@ -1,7 +1,7 @@
 <template>
   <uv-navbar title="个人中心" :placeholder="true" :autoBack="true" left-icon="">
     <template #right>
-      <text class="dicon dicon-asterism" @click="goInfo"></text>
+      <text class="dicon dicon-shezhi" @click="goInfo"></text>
     </template>
   </uv-navbar>
   <scroll-view :scroll-y="true" :style="`height: ${scrollHeight}px`">
@@ -16,8 +16,12 @@
         shape="square"
       ></uv-avatar>
       <view>
-        <text class="h3 uv-line-1"> {{ userStore.nickname }} </text>
-        <text class="font-sm uv-line-1"> 杜克号：{{ userStore.uname }} </text>
+        <text class="h3 uv-line-1">
+          {{ userStore.isLogined ? userStore.nickname : "点击进行登录" }}
+        </text>
+        <text class="font-sm uv-line-1">
+          杜克号：{{ userStore.isLogined ? userStore.uname : "-" }}
+        </text>
       </view>
     </view>
     <uv-gap height="20rpx" bgColor="#ffffff"> </uv-gap>
@@ -68,7 +72,11 @@ const userStore = useUserStore();
 
 const { scrollHeight } = useScrollHeight(44 + 50);
 
-function goInfo(e) {
+function goInfo() {
+  if (!userStore.isLogined) {
+    showLoginPage();
+    return;
+  }
   uni.navigateTo({
     url: "info",
   });
@@ -82,8 +90,13 @@ function goUpdate() {
 
 function logout() {
   userStore.logout();
+  showLoginPage();
+}
+
+function showLoginPage() {
   uni.navigateTo({
     url: "login",
+    animationType: "slide-in-bottom",
   });
 }
 </script>

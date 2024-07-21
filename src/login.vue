@@ -1,5 +1,6 @@
 <template>
   <view class="login-page-container">
+    <uv-navbar :placeholder="true" :autoBack="true" />
     <uv-toast ref="toastRef" />
     <view class="form-container">
       <view class="logo"> 进入DOOK </view>
@@ -153,7 +154,7 @@ function goReset() {
 .login-page-container {
   height: 100%;
   width: 100%;
-  padding-top: 200rpx;
+  padding-top: 100rpx;
   box-sizing: border-box;
 }
 .form-container {

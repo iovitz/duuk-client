@@ -7,9 +7,13 @@
         :showAction="false"
         inputAlign="center"
         height="66rpx"
+        disabled
+        @click="goSearch"
       >
       </uv-search>
-      <i class="dicon dicon-fabu upload-icon" @click="goUpload"></i>
+      <view class="upload-icon" @click="goUpload">
+        <image src="/static/tabbar/upload.svg" />
+      </view>
     </view>
     <view class="swiper">
       <sing-swiper />
@@ -22,7 +26,6 @@
       @change="handleTabChange"
       :duration="200"
     >
-      <template #right> <i class="dicon dicon-daoru"></i> 导入 </template>
     </uv-tabs>
 
     <swiper
@@ -126,6 +129,12 @@ function handleSwiperScroll(item) {
   currentSwiperPageIndex.value = item.detail.current;
 }
 
+function goSearch() {
+  uni.navigateTo({
+    url: "/search",
+  });
+}
+
 function goUpload() {
   uni.navigateTo({
     url: "/upload",
@@ -160,8 +169,12 @@ const tabList = [
   margin-top: 30rpx;
 }
 .upload-icon {
-  font-size: 50rpx;
-  margin-left: 10rpx;
+  font-size: 0;
+  padding-left: 10rpx;
+  > image {
+    height: 60rpx;
+    width: 60rpx;
+  }
 }
 
 .swiper {

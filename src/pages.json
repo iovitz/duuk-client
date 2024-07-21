@@ -116,7 +116,7 @@
     "current": 0, //当前激活的模式(list 的索引项)
     "list": [
       {
-        "path": "info" //启动页面，必选
+        "path": "discuss" //启动页面，必选
       }
     ]
   }

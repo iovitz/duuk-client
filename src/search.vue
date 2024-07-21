@@ -22,58 +22,76 @@
       </view>
       <uv-tabs
         :list="tabList"
-        @click="handleTabClick"
         :scrollable="false"
+        :current="current"
+        lineColor="#ff7e7c"
+        @change="handleTabChange"
       ></uv-tabs>
     </view>
 
-    <scroll-view
-      :scroll-y="true"
+    <swiper
+      class="page-swiper"
+      :current="currentSwiperPageIndex"
+      :duration="200"
+      @change="handleSwiperScroll"
       :style="{
-        height: scrollHeight + 'px',
+        height: `${scrollHeight}px`,
       }"
-      :scroll-with-animation="true"
-      :show-scrollbar="false"
     >
-      {{ searchInput }}
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-      <view>CONTENT</view>
-    </scroll-view>
+      <swiper-item>
+        <scroll-view
+          id="综合"
+          :scroll-y="true"
+          :style="`height: ${scrollHeight}px`"
+        >
+          <view>124</view>
+          <view>124</view>
+          <view>124</view>
+          <view>124</view>
+          <view>124</view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view
+          id="声音"
+          :scroll-y="true"
+          :style="`height: ${scrollHeight}px`"
+          class="scroll-view-item_H uni-bg-green"
+        >
+          42424
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view
+          id="歌词"
+          :scroll-y="true"
+          :style="`height: ${scrollHeight}px`"
+          class="scroll-view-item_H uni-bg-green"
+        >
+          42424
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view
+          id="用户"
+          :scroll-y="true"
+          :style="`height: ${scrollHeight}px`"
+          class="scroll-view-item_H uni-bg-green"
+        >
+          42424
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view
+          id="群组"
+          :scroll-y="true"
+          :style="`height: ${scrollHeight}px`"
+          class="scroll-view-item_H uni-bg-green"
+        >
+          42424
+        </scroll-view>
+      </swiper-item>
+    </swiper>
   </view>
 </template>
 
@@ -84,16 +102,28 @@ import { ref } from "vue";
 
 const { scrollHeight } = useScrollHeight(34 + 2 + 44 + 20);
 
+const current = ref(0);
 const searchInput = ref("");
+
+const currentSwiperPageIndex = ref(0);
+
+function handleTabChange(item) {
+  currentSwiperPageIndex.value = item.index;
+}
+
+function handleSwiperScroll(item) {
+  currentSwiperPageIndex.value = item.detail.current;
+}
+
 const tabList = ref([
   {
     name: "综合",
   },
   {
-    name: "消息",
+    name: "声音",
   },
   {
-    name: "文章",
+    name: "歌词",
   },
   {
     name: "用户",
@@ -102,9 +132,6 @@ const tabList = ref([
     name: "群组",
   },
 ]);
-const handleTabClick = (e) => {
-  logger.debug("切换tab", e);
-};
 const goBack = () => {
   uni.navigateBack();
 };

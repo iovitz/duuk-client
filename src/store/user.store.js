@@ -19,7 +19,21 @@ export const useUserStore = defineStore("user", {
 			uname: "",
 		};
 	},
+	getters: {
+		isLogined() {
+			return !!this.uid;
+		},
+	},
 	actions: {
+		loginRouteGuard() {
+			if (!this.isLogined) {
+				uni.navigateBack();
+				uni.navigateTo({
+					url: "login",
+					animationType: "slide-in-bottom",
+				});
+			}
+		},
 		async register(payload) {
 			const res = await io.post("/user/register", {
 				uname: payload.username,
