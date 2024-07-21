@@ -60,14 +60,14 @@
     <view class="auth-buttons">
       <view class="auth-button wx" @click="handleWXLogin">
         <uv-icon
-          name="wechat-fill"
+          name="gongzhonghao"
           custom-prefix="dicon"
-          size="30"
+          size="20"
           color="#fff"
         />
       </view>
       <view class="auth-button qq" @click="handleQQLogin">
-        <uv-icon name="QQ" custom-prefix="dicon" size="30" color="#fff" />
+        <uv-icon name="qq" custom-prefix="dicon" size="20" color="#fff" />
       </view>
     </view>
   </view>
