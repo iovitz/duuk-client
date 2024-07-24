@@ -15,13 +15,13 @@ export const useUserStore = defineStore("user", {
 			account: "",
 			nickname: "",
 			avatar: "",
-			uid: "",
+			userId: "",
 			username: "",
 		};
 	},
 	getters: {
 		isLogined() {
-			return !!this.uid;
+			return !!this.userId;
 		},
 	},
 	actions: {
@@ -55,14 +55,14 @@ export const useUserStore = defineStore("user", {
 		handleLoginSuccess(res) {
 			storage.set("token", res.token);
 			this.nickname = res.user.nickname;
-			this.uid = res.user.uid;
+			this.userId = res.user.userId;
 			this.username = res.user.username;
 			this.avatar = res.user.avatar;
 		},
 		logout() {
 			storage.remove("token");
 			this.nickname = "";
-			this.uid = "";
+			this.userId = "";
 			this.username = "";
 			this.avatar = "";
 		},
