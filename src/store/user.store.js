@@ -8,7 +8,7 @@ import { defineStore } from "pinia";
 export const useUserStore = defineStore("user", {
 	persist: {
 		key: "user",
-		paths: ["account", "nickname", "avatar", "uid", "uname", "isLogin"],
+		paths: ["account", "nickname", "avatar", "uid", "username", "isLogin"],
 	},
 	state: () => {
 		return {
@@ -16,7 +16,7 @@ export const useUserStore = defineStore("user", {
 			nickname: "",
 			avatar: "",
 			uid: "",
-			uname: "",
+			username: "",
 		};
 	},
 	getters: {
@@ -36,8 +36,8 @@ export const useUserStore = defineStore("user", {
 		},
 		async register(payload) {
 			const res = await io.post("/user/register", {
-				uname: payload.username,
-				pwd: payload.password,
+				username: payload.username,
+				password: payload.password,
 				vcode: payload.code,
 			});
 			this.handleLoginSuccess(res);
@@ -45,8 +45,8 @@ export const useUserStore = defineStore("user", {
 		},
 		async login(payload) {
 			const res = await io.post("/user/login", {
-				uname: payload.username,
-				pwd: payload.password,
+				username: payload.username,
+				password: payload.password,
 				vcode: payload.code,
 			});
 			this.handleLoginSuccess(res);
@@ -56,14 +56,14 @@ export const useUserStore = defineStore("user", {
 			storage.set("token", res.token);
 			this.nickname = res.user.nickname;
 			this.uid = res.user.uid;
-			this.uname = res.user.uname;
+			this.username = res.user.username;
 			this.avatar = res.user.avatar;
 		},
 		logout() {
 			storage.remove("token");
 			this.nickname = "";
 			this.uid = "";
-			this.uname = "";
+			this.username = "";
 			this.avatar = "";
 		},
 	},

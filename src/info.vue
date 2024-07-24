@@ -15,7 +15,7 @@
       <uv-list-item title="昵称" :rightText="nickname" showArrow clickable />
       <uv-list-item
         title="Duuk号"
-        :rightText="userStore.uname"
+        :rightText="userStore.username"
         showArrow
         clickable
       />

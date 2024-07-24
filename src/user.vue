@@ -20,7 +20,7 @@
           {{ userStore.isLogined ? userStore.nickname : "点击进行登录" }}
         </text>
         <text class="font-sm uv-line-1">
-          杜克号：{{ userStore.isLogined ? userStore.uname : "-" }}
+          杜克号：{{ userStore.isLogined ? userStore.username : "-" }}
         </text>
       </view>
     </view>

@@ -76,7 +76,7 @@ const handleUpload = async () => {
     isUploading.value = true;
     const res = await io.request("post", "/song_words/upload", {
       name: songName.value,
-      words: songWords.value,
+      lyric: songWords.value,
     });
     toastRef.value.show({
       type: "success",
