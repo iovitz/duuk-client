@@ -45,7 +45,6 @@ function goBookCategory() {
   });
 }
 
-const bookListRef = ref(null);
 let isLoading = false;
 async function loadBookList() {
   if (isLoading) return false;
@@ -60,8 +59,6 @@ async function loadBookList() {
       resolve(res);
     }, 1000);
   });
-  const res = await fetchPromise;
-  bookListRef.value.addToList(res);
   isLoading = false;
 }
 
