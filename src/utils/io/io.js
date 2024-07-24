@@ -5,7 +5,7 @@ import { getConfig } from "../config";
 import pako from "@/utils/common/pako.js";
 import { Buffer } from "buffer";
 import { getCurrentInstance } from "vue";
-import { storage } from '../storage';
+import { storage } from "../storage";
 
 export class IO {
 	isWatching = true;
@@ -16,7 +16,7 @@ export class IO {
 		const socket = socketIO(socketConf.path, {
 			query: socketConf.query ?? {},
 			transports: ["websocket", "polling"],
-			timeout: socketConf.timeout ?? 500,
+			timeout: socketConf.timeout ?? 5000,
 		});
 		this.socket = socket;
 		this.initSocket();
@@ -99,7 +99,7 @@ export class IO {
 				header: {
 					...header,
 					...requestHeader,
-					Authorization: storage.get('token')
+					Authorization: storage.get("token"),
 				},
 			});
 		})
@@ -173,11 +173,12 @@ export class IO {
 	}
 }
 
+let baseURL;
 // #ifdef H5
-let baseURL = getConfig("VITE_BASE_URL_H5");
+baseURL = getConfig("VITE_BASE_URL_H5");
 // #endif
 // #ifndef H5
-let baseURL = getConfig("VITE_BASE_URL");
+baseURL = getConfig("VITE_BASE_URL");
 // #endif
 
 export const io = new IO(
