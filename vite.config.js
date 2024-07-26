@@ -17,10 +17,10 @@ export default {
 	transpileDependencies: ["@dcloudio/uni-ui"],
 	server: {
 		proxy: {
-			"/api": {
-				// target: "http://<server host>[:port]/", // 远程服务器
-				target: "http://192.168.1.102:9293/", // 本地开发
+			"^/api*": {
+				target: "http://127.0.0.1:9293/api", // 本地开发
 				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api/, ""),
 			},
 		},
 	},
