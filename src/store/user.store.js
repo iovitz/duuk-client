@@ -8,7 +8,7 @@ import { defineStore } from "pinia";
 export const useUserStore = defineStore("user", {
 	persist: {
 		key: "user",
-		paths: ["account", "nickname", "avatar", "uid", "username", "isLogin"],
+		paths: ["account", "nickname", "avatar", "userId", "username"],
 	},
 	state: () => {
 		return {
