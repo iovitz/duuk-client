@@ -39,11 +39,7 @@
       }"
     >
       <swiper-item>
-        <scroll-view
-          id="all"
-          :scroll-y="true"
-          :style="`height: ${scrollHeight}px`"
-        >
+        <scroll-view :scroll-y="true" :style="`height: ${scrollHeight}px`">
           <view>124</view>
           <view>124</view>
           <view>124</view>
@@ -53,7 +49,6 @@
       </swiper-item>
       <swiper-item>
         <scroll-view
-          id="voice"
           :scroll-y="true"
           :style="`height: ${scrollHeight}px`"
           class="scroll-view-item_H uni-bg-green"
@@ -63,7 +58,6 @@
       </swiper-item>
       <swiper-item>
         <scroll-view
-          id="s"
           :scroll-y="true"
           :style="`height: ${scrollHeight}px`"
           class="scroll-view-item_H uni-bg-green"
@@ -73,22 +67,11 @@
       </swiper-item>
       <swiper-item>
         <scroll-view
-          id="user"
           :scroll-y="true"
           :style="`height: ${scrollHeight}px`"
           class="scroll-view-item_H uni-bg-green"
         >
           <search-user />
-        </scroll-view>
-      </swiper-item>
-      <swiper-item>
-        <scroll-view
-          id="group"
-          :scroll-y="true"
-          :style="`height: ${scrollHeight}px`"
-          class="scroll-view-item_H uni-bg-green"
-        >
-          42424
         </scroll-view>
       </swiper-item>
     </swiper>
@@ -138,9 +121,6 @@ const tabList = ref([
   },
   {
     name: "用户",
-  },
-  {
-    name: "群组",
   },
 ]);
 const goBack = () => {
