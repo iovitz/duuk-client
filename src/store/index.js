@@ -3,6 +3,7 @@ import { createPersistedState } from "pinia-plugin-persistedstate";
 export * from "./app.store";
 export * from "./book.store";
 export * from "./user.store";
+export * from "./search.store";
 
 export const pinia = createPinia();
 

@@ -1,9 +1,9 @@
 <template>
   <uv-list padding="30rpx">
-    <uv-list-item v-for="i in 30" :key="i">
+    <uv-list-item v-for="item in searchStore.users" :key="item.user_id">
       <template #header>
         <uv-avatar
-          src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-dc-site/460d46d0-4fcc-11eb-8ff1-d5dcf8779628.png"
+          :src="item.avatar"
           shape="circle"
           size="50"
           class="mr-2"
@@ -11,9 +11,17 @@
       </template>
       <template #body>
         <view class="flex-1 flex-column">
-          <uv-text bold size="14" text="雾凇的雾"></uv-text>
-          <uv-text type="info" size="12" text="粉丝数：18 作品：4"></uv-text>
-          <uv-text type="info" size="12" text="DUUK号：28381388"></uv-text>
+          <uv-text bold size="14" :text="item.nickname"></uv-text>
+          <uv-text
+            type="info"
+            size="12"
+            :text="`粉丝数：${item.fans_number} 作品：${item.voice_number}`"
+          ></uv-text>
+          <uv-text
+            type="info"
+            size="12"
+            :text="`DUUK号：${item.user_id}`"
+          ></uv-text>
         </view>
       </template>
       <template #footer>
@@ -26,6 +34,17 @@
             :style="{
               height: '2em',
             }"
+            v-if="item.followed"
+          ></uv-button>
+          <uv-button
+            type="primary"
+            disabled
+            shape="circle"
+            text="已关注"
+            v-else
+            :style="{
+              height: '2em',
+            }"
           ></uv-button>
         </view>
       </template>
@@ -33,6 +52,10 @@
   </uv-list>
 </template>
 
-<script setup></script>
+<script setup>
+import { useSearchStore } from "@/store";
+
+const searchStore = useSearchStore();
+</script>
 
 <style lang="scss" scoped></style>

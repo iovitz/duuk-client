@@ -48,29 +48,17 @@
         </scroll-view>
       </swiper-item>
       <swiper-item>
-        <scroll-view
-          :scroll-y="true"
-          :style="`height: ${scrollHeight}px`"
-          class="scroll-view-item_H uni-bg-green"
-        >
+        <scroll-view :scroll-y="true" :style="`height: ${scrollHeight}px`">
           42424
         </scroll-view>
       </swiper-item>
       <swiper-item>
-        <scroll-view
-          :scroll-y="true"
-          :style="`height: ${scrollHeight}px`"
-          class="scroll-view-item_H uni-bg-green"
-        >
+        <scroll-view :scroll-y="true" :style="`height: ${scrollHeight}px`">
           42424
         </scroll-view>
       </swiper-item>
       <swiper-item>
-        <scroll-view
-          :scroll-y="true"
-          :style="`height: ${scrollHeight}px`"
-          class="scroll-view-item_H uni-bg-green"
-        >
+        <scroll-view :scroll-y="true" :style="`height: ${scrollHeight}px`">
           <search-user />
         </scroll-view>
       </swiper-item>
@@ -83,10 +71,12 @@ import { useScrollHeight } from "@/hooks/scroll-height";
 import { logger } from "@/utils/logger";
 import { ref } from "vue";
 import SearchUser from "./components/search-user/search-user.vue";
-import { useRouteQuery } from "./hooks/use-route-query";
 import { onLoad } from "@dcloudio/uni-app";
+import { useSearchStore } from "@/store";
 
 const { scrollHeight } = useScrollHeight(34 + 2 + 44 + 20);
+
+const searchStore = useSearchStore();
 
 const currentTabIndex = ref(0);
 const searchInput = ref("");
@@ -128,6 +118,8 @@ const goBack = () => {
 };
 function handleSearch() {
   logger.debug("搜索内容", searchInput.value);
+  searchStore.searchUsers(searchInput.value);
+  searchStore.clear();
 }
 </script>
 
