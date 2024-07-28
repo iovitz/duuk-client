@@ -58,9 +58,7 @@
         </scroll-view>
       </swiper-item>
       <swiper-item>
-        <scroll-view :scroll-y="true" :style="`height: ${scrollHeight}px`">
-          <search-user />
-        </scroll-view>
+        <search-user :scrollHeight="scrollHeight" />
       </swiper-item>
     </swiper>
   </view>
