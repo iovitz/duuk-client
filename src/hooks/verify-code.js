@@ -14,7 +14,7 @@ export function useVerifyCode(idSelector, width, field) {
 	async function reflashVerifyCode() {
 		try {
 			const res = await io.get(
-				`/verify/verify-code?height=${size.value.height}&width=${width}&field=${field}`,
+				`/v1/verify/verify-code?height=${size.value.height}&width=${width}&type=${field}`,
 			);
 			verifyCodeSvg.value = res;
 		} catch (e) {

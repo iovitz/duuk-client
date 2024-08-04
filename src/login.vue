@@ -11,10 +11,10 @@
         ref="formRef"
         :rules="rules"
       >
-        <uv-form-item prop="username" label="用户名：">
+        <uv-form-item prop="nickname" label="用户名：">
           <uv-input
             placeholder="请输入用户名"
-            v-model="formData.username"
+            v-model="formData.nickname"
             maxlength="16"
           />
         </uv-form-item>
@@ -78,11 +78,11 @@
 import { onMounted, ref } from "vue";
 import { logger } from "@/utils/logger";
 import { useVerifyCode } from "@/hooks/verify-code";
-import { passwordRule, usernameRule, verifyCodeRule } from "./utils/rules";
+import { passwordRule, nicknameRule, verifyCodeRule } from "./utils/rules";
 import { useUserStore } from "./store";
 
 const rules = {
-  username: usernameRule,
+  nickname: nicknameRule,
   password: passwordRule,
   code: verifyCodeRule,
 };

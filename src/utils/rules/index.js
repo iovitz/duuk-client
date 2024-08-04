@@ -1,4 +1,4 @@
-export const usernameRule = [
+export const nicknameRule = [
 	{
 		required: true,
 		type: "string",
@@ -12,6 +12,30 @@ export const usernameRule = [
 		max: 10,
 		min: 1,
 		message: "用户名长度为1~10位",
+		// blur和change事件触发检验
+		trigger: ["blur", "change"],
+	},
+];
+
+export const emailRule = [
+	{
+		required: true,
+		message: "邮箱不能为空",
+		// blur和change事件触发检验
+		trigger: ["blur", "change"],
+	},
+	{
+		type: "email",
+		message: "邮箱格式错误",
+		// blur和change事件触发检验
+		trigger: ["blur", "change"],
+	},
+	{
+		required: true,
+		type: "string",
+		max: 30,
+		min: 6,
+		message: "邮箱长度为6~30位",
 		// blur和change事件触发检验
 		trigger: ["blur", "change"],
 	},

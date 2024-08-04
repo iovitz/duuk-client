@@ -35,16 +35,17 @@ export const useUserStore = defineStore("user", {
 			}
 		},
 		async register(payload) {
-			const res = await io.post("/user/register", {
-				username: payload.username,
+			const res = await io.post("/v1/auth/register", {
+				nickname: payload.nickname,
+				email: payload.email,
 				password: payload.password,
-				vcode: payload.code,
+				code: payload.code,
 			});
 			this.handleLoginSuccess(res);
 			return res.user;
 		},
 		async login(payload) {
-			const res = await io.post("/user/login", {
+			const res = await io.post("/v1/auth/login", {
 				username: payload.username,
 				password: payload.password,
 				vcode: payload.code,

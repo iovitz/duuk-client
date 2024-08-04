@@ -11,11 +11,20 @@
         ref="formRef"
         :rules="rules"
       >
-        <uv-form-item label="用户名：" prop="username">
+        <uv-form-item label="用户名：" prop="nickname">
           <uv-input
             placeholder="请输入用户名"
             type="text"
-            v-model="formData.username"
+            v-model="formData.nickname"
+            maxlength="16"
+          />
+        </uv-form-item>
+
+        <uv-form-item label="邮箱：" prop="email">
+          <uv-input
+            placeholder="请输入用户名"
+            type="text"
+            v-model="formData.email"
             maxlength="16"
           />
         </uv-form-item>
@@ -70,7 +79,12 @@
 import { onMounted, ref } from "vue";
 import { useVerifyCode } from "@/hooks/verify-code";
 import { logger } from "@/utils/logger";
-import { passwordRule, usernameRule, verifyCodeRule } from "@/utils/rules";
+import {
+  passwordRule,
+  nicknameRule,
+  verifyCodeRule,
+  emailRule,
+} from "@/utils/rules";
 import { useUserStore } from "@/store";
 const userStore = useUserStore();
 
@@ -79,13 +93,15 @@ const toastRef = ref(null);
 
 const formData = ref({
   code: "",
-  username: "",
+  nickname: "",
+  email: "",
   password: "",
   repeat: "",
 });
 
 const rules = {
-  username: usernameRule,
+  nickname: nicknameRule,
+  email: emailRule,
   password: passwordRule,
   repeat: {
     validator: (_, value) => {
