@@ -95,7 +95,22 @@ function handleOpenPopup() {
 }
 
 function actionSheetSelect(e) {
-  logger.debug("Popup Change", e);
+  logger.debug("Sheet Action Select", e);
+  switch (e.openType) {
+    case "add":
+      logger.debug("添加用户");
+      uni.navigateTo({
+        url: "search?index=3",
+      });
+
+      break;
+    case "create":
+      logger.debug("创建群组");
+      break;
+    case "scan":
+      logger.debug("扫描二维码");
+      break;
+  }
 }
 
 function handleGoContact(e) {
